@@ -7,13 +7,17 @@ using UnityEngine.Events;
 public class Typer : MonoBehaviour
 {
     public TMP_Text wordOutput = null;
+    public WordBank wordBank = null;
+
     public UnityEvent correctLetterEvent;
     public UnityEvent wrongLetterEvent;
     public UnityEvent wordCompleteEvent;
     public UnityEvent wordFailedEvent;
+    public UnityEvent levelComplete;
 
     private string remainingWord = string.Empty;
-    private string currentWord = "hello";
+    private string currentWord = string.Empty;
+    private float timer = 10f;
 
     void Start()
     {
@@ -22,18 +26,30 @@ public class Typer : MonoBehaviour
 
     void SetCurrentWord()
     {
+        currentWord = wordBank.GetWord();
+        timer = 10f;
         SetRemainingWord(currentWord);
     }
     
     private void SetRemainingWord(string newString)
     {
         remainingWord = newString;
+        if(string.IsNullOrEmpty(remainingWord))
+        {
+            levelComplete.Invoke();
+        }
         wordOutput.text = remainingWord;
     }
 
     void Update()
     {
         CheckInput();
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            wordFailedEvent.Invoke();
+            SetCurrentWord();
+        }
     }
 
     void CheckInput()
