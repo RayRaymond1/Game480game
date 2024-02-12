@@ -729,7 +729,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -749,11 +755,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: cffd46c9-2b6b-490f-88c3-8b2a7cc90d37
+  cloudProjectId: 309335ca-5ff4-4605-93de-de27c84c3df4
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Game 480
-  organizationId: iminurcheese
+  organizationId: supersanic456
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
