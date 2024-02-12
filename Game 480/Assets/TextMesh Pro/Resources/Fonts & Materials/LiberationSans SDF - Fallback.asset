@@ -322,6 +322,7 @@ Texture2D:
   m_IsReadable: 1
   m_StreamingMipmaps: 0
   m_StreamingMipmapsPriority: 0
+
   m_AlphaIsTransparency: 0
   m_ImageCount: 1
   m_TextureDimension: 2
