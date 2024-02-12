@@ -17,6 +17,7 @@ public class Typer : MonoBehaviour
 
     private string remainingWord = string.Empty;
     private string currentWord = string.Empty;
+    private float timer = 10f;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Typer : MonoBehaviour
     void SetCurrentWord()
     {
         currentWord = wordBank.GetWord();
+        timer = 10f;
         SetRemainingWord(currentWord);
     }
     
@@ -42,6 +44,12 @@ public class Typer : MonoBehaviour
     void Update()
     {
         CheckInput();
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            wordFailedEvent.Invoke();
+            SetCurrentWord();
+        }
     }
 
     void CheckInput()
