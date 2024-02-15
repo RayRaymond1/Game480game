@@ -95,4 +95,13 @@ public class Typer : MonoBehaviour
         return remainingWord.Length == 0;
     }
 
+    public void IncreaseTime(float timeIncrement)
+    {
+        timer += timeIncrement;
+    }
+    public float GetTime()
+    {
+        return timer;
+    }
+
 }
