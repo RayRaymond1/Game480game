@@ -18,6 +18,7 @@ public class Typer : MonoBehaviour
     private string remainingWord = string.Empty;
     private string currentWord = string.Empty;
     private float timer = 10f;
+    private bool cutScene = false;
 
     void Start()
     {
@@ -29,6 +30,16 @@ public class Typer : MonoBehaviour
         currentWord = wordBank.GetWord();
         timer = 10f;
         SetRemainingWord(currentWord);
+    }
+
+    void disableInput()
+    {
+        cutScene = true;
+    }
+
+    void enableInput()
+    {
+        cutScene = false;
     }
     
     private void SetRemainingWord(string newString)
@@ -54,7 +65,7 @@ public class Typer : MonoBehaviour
 
     void CheckInput()
     {
-        if(Input.anyKeyDown)
+        if(Input.anyKeyDown && !cutScene)
         {
             string keysPressed = Input.inputString;
             
