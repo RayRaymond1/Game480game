@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class Typer : MonoBehaviour
 {
-    public TMP_Text wordOutput = null;
+    public TMP_Text currentWordText = null;
+    public TMP_Text currentProgressText = null;
     public WordBank wordBank = null;
 
     public UnityEvent correctLetterEvent;
@@ -15,10 +16,12 @@ public class Typer : MonoBehaviour
     public UnityEvent wordFailedEvent;
     public UnityEvent levelComplete;
 
-    private string remainingWord = string.Empty;
     private string currentWord = string.Empty;
-    private float timer = 10f;
+    private string currentWordProgress = string.Empty;
+    [SerializeField] private float originalTime = 100f;
+    private float timer = 0f;
     private bool cutScene = false;
+    private string nextLetter = string.Empty;
 
     void Start()
     {
@@ -28,8 +31,16 @@ public class Typer : MonoBehaviour
     void SetCurrentWord()
     {
         currentWord = wordBank.GetWord();
-        timer = 10f;
-        SetRemainingWord(currentWord);
+        nextLetter = currentWord;
+        if(string.IsNullOrEmpty(currentWord))
+        {
+            levelComplete.Invoke();
+            return;
+        }
+        timer = originalTime;
+        currentWordText.text = currentWord;
+        currentWordProgress = string.Empty;
+        currentProgressText.text = currentWordProgress;
     }
 
     void disableInput()
@@ -42,14 +53,10 @@ public class Typer : MonoBehaviour
         cutScene = false;
     }
     
-    private void SetRemainingWord(string newString)
+    private void SetRemainingWord()
     {
-        remainingWord = newString;
-        if(string.IsNullOrEmpty(remainingWord))
-        {
-            levelComplete.Invoke();
-        }
-        wordOutput.text = remainingWord;
+        currentProgressText.text = currentWordProgress;
+        nextLetter = nextLetter.Remove(0, 1);
     }
 
     void Update()
@@ -76,9 +83,10 @@ public class Typer : MonoBehaviour
 
     void EnterLetter(string typedLetter)
     {
+        Debug.Log("Typed letter: " + typedLetter);
         if(IsCorrectLetter(typedLetter))
         {
-            RemoveLetter();
+            AddLetter(typedLetter);
             correctLetterEvent.Invoke();
             if(IsWordComplete())
             {
@@ -86,24 +94,30 @@ public class Typer : MonoBehaviour
                 SetCurrentWord();
             }
         } else{
-            Debug.Log("Wrong letter");
+            //Debug.Log("Wrong letter");
+            Debug.Log("Current Progress:" + currentWordProgress);
             wrongLetterEvent.Invoke();
         }
     }
 
     bool IsCorrectLetter(string letter)
     {
-        return remainingWord.IndexOf(letter) == 0;
+        Debug.Log("Next Letter: " + currentWord[currentWordProgress.Length]);
+        Debug.Log(letter[0]);
+        Debug.Log(nextLetter[0]);
+        return letter[0] == nextLetter[0];
     }
-    void RemoveLetter()
+    void AddLetter(string typedLetter)
     {
-        string newString = remainingWord.Remove(0, 1);
-        SetRemainingWord(newString);
+       // Debug.Log("Adding letter: " + typedLetter);
+       // Debug.Log("Current word progress: " + currentWordProgress);
+        currentWordProgress += typedLetter;
+        SetRemainingWord();
     }
 
     bool IsWordComplete()
     {
-        return remainingWord.Length == 0;
+        return currentWordProgress == currentWord;
     }
 
     public void IncreaseTime(float timeIncrement)

@@ -8,7 +8,8 @@ public class EnemyMovement : MonoBehaviour
     public Typer typer;
     public Camera mainCamera;
     public UnityEvent sceneStart;
-    public float shoveDistance = 1f;     public float shoveTimeIncrease = 5f; 
+    public float shoveDistance = 1f;     
+    public float shoveTimeIncrease = 5f; 
     private Vector3 initialPosition; 
     private Vector3 stopPoint;
     public float stopDistance = 3f; 
@@ -19,25 +20,31 @@ public class EnemyMovement : MonoBehaviour
     {
         sceneStart.AddListener(OnSceneStart);
         typer.wordFailedEvent.AddListener(wordFailed);
+        typer.wordCompleteEvent.AddListener(wordCompleted);
     }
 
     void OnSceneStart()
     {
         initialPosition = transform.position;
-        stopPoint = mainCamera.transform.position - transform.position;
+        stopPoint = mainCamera.transform.position - initialPosition;
         stopPoint = stopPoint - stopPoint.normalized * stopDistance;
+        stopPoint = stopPoint + initialPosition;
     }
     
     void wordFailed(){
         StartCoroutine(JumpBack(initialPosition));
     }
+    void wordCompleted(){
+        StartCoroutine(JumpBack(initialPosition));
+    }
 
-    void Start(){
+    void Start()
+    {
         sceneStart.Invoke();
     }
 
     void Update()
-    {
+    { 
         if(!reseting){
             float distance = Vector3.Distance(transform.position, stopPoint);
             float speed = distance / typer.GetTime();
