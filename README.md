@@ -2,11 +2,11 @@
 
 ## [Design Document](https://docs.google.com/document/d/1RnADUqa4XkYSha4MJzp1s47EtEJZHQJguFQMNVEDugk/edit?usp=sharing)
 
-## [Development Plan](https://docs.google.com/document/d/1OyMZX1aCOAXCOVbCiCbSqsiujDuK_RaFvbFi-OqoGJM/edit?usp=sharing)
+## [Development Plan](https://docs.google.com/document/d/1OyMZX1aCOAXCOVbCiCbSqsiujDuK_RaFvbFi-OqoGJM/edit?usp=sharing) (Updated 2-21-24)
 
 ## [Concept Document](https://docs.google.com/document/d/1MUrVNBQ8p_VT9coivICi4tCYFXty_MS96A12-YqLs7o/edit?usp=sharing)
 
-## [Team Contract](https://docs.google.com/document/d/1iJdKovIKsm1fYGri0wpCYbsGHCb3OqX8M1YUjYPesc0/edit?usp=sharing)
+## [Team Contract](https://docs.google.com/document/d/1iJdKovIKsm1fYGri0wpCYbsGHCb3OqX8M1YUjYPesc0/edit?usp=sharing) (Updated 2-21-24)
 
 All game assets used as of now have been imported from other sources. None of them were made by us.
 
