@@ -18,6 +18,11 @@ This week, we began building the game in Unity. We created a preliminary build o
 
 ### 2-23-24
 
+Two new team members have joined since our last progress report, and we have made significant progress as a result. Our draft of the game’s script now covers the story up through the second level, and we have come up with new ideas for each character’s role in the story. We also now have an idea of what the setting of Level 2 is going to look like. We have implemented the basic version of an enemy including moving towards the player and resetting if the player fails to complete the word in time. While this may seem barebones, it is purposefully left that was to make creating different enemy types and testing easier. All other functions except for one are trivial to implement and only require adding one function to an in-game event. The next step is to finish implementing the targeting system so that the player can rotate between different enemies. 
+
+Currently with Level 1, the map design and lighting are finished. There are certain surfaces that need a shader to help it to either reflect or look like water, but as of now we are currently creating cutscenes. The cutscenes at this stage are early block outs to show how the camera will be in each shot, and hopefully we can start adding voices and animations right after. For Level 2, we have drawn out some diagrams of how progression through the level might work. Finally, we are in the process of creating the game’s UI and UX, including the main menu, pause menu, game over screen, and options menu.
+
+
 ### 3-15-24
 
 ### 3-29-24
