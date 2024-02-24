@@ -1,6 +1,6 @@
 # The Way of Words - Development Documentation
 
-## How to play the current (Draft 2)
+## How to play the current version (Draft 2)
 
 1. Open the game file
 2.  Navigate to J_Scene
