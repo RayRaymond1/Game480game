@@ -1,5 +1,12 @@
 # The Way of Words - Development Documentation
 
+## How to play the current (Draft 2)
+
+1. Open the game file
+2.  Navigate to J_Scene
+3.  Hit play
+4.  Type out the words that appear on screen as fast as you can!
+
 ## [Design Document](https://docs.google.com/document/d/1RnADUqa4XkYSha4MJzp1s47EtEJZHQJguFQMNVEDugk/edit?usp=sharing)
 
 ## [Development Plan](https://docs.google.com/document/d/1OyMZX1aCOAXCOVbCiCbSqsiujDuK_RaFvbFi-OqoGJM/edit?usp=sharing) (Updated 2-21-24)
