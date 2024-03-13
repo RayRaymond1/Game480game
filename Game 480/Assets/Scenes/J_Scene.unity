@@ -644,6 +644,7 @@ Transform:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
@@ -920,11 +921,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 191929425}
   m_SourcePrefab: {fileID: 100100000, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
---- !u!20 &6090112015361021606 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 1519848208996346685, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
-  m_PrefabInstance: {fileID: 6090112015361021604}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6691059982968229205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 760148106260943228, guid: 4c968a092a7ab3b489c9964f3480f057, type: 3}
