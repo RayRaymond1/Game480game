@@ -14,18 +14,26 @@ public class Typer : MonoBehaviour
     public UnityEvent wrongLetterEvent;
     public UnityEvent wordCompleteEvent;
     public UnityEvent wordFailedEvent;
-    public UnityEvent levelComplete;
+    public UnityEvent wordBankComplete;
 
     private string currentWord = string.Empty;
     private string currentWordProgress = string.Empty;
-    [SerializeField] private float originalTime = 100f;
+    [SerializeField] private float originalTime = 1f;
     private float timer = 0f;
     private bool cutScene = false;
     private string nextLetter = string.Empty;
+    public EnemyController enemyController;
+    private int score = 0;
+    private int health = 100;
+    [SerializeField] private bool multipleWords = false;
 
     void Start()
     {
         SetCurrentWord();
+        EnemyLoaded();
+        wordCompleteEvent.AddListener(CalculateScore);
+        wordFailedEvent.AddListener(decreaseHealth);
+        wordBankComplete.AddListener(OnDestroy);
     }
 
     void SetCurrentWord()
@@ -34,13 +42,17 @@ public class Typer : MonoBehaviour
         nextLetter = currentWord;
         if(string.IsNullOrEmpty(currentWord))
         {
-            levelComplete.Invoke();
+            wordBankComplete.Invoke();
             return;
         }
-        timer = originalTime;
+        timer = originalTime * currentWord.Length;
         currentWordText.text = currentWord;
         currentWordProgress = string.Empty;
         currentProgressText.text = currentWordProgress;
+    }
+    void EnemyLoaded()
+    {
+        enemyController.AddEnemy(transform.parent.gameObject);
     }
 
     void disableInput()
@@ -66,13 +78,13 @@ public class Typer : MonoBehaviour
         if(timer <= 0)
         {
             wordFailedEvent.Invoke();
-            SetCurrentWord();
+            ResetWord();
         }
     }
 
     void CheckInput()
     {
-        if(Input.anyKeyDown && !cutScene)
+        if(Input.anyKeyDown && !cutScene && enemyController.GetCurrentEnemy() == transform.parent.gameObject)
         {
             string keysPressed = Input.inputString;
             
@@ -80,10 +92,16 @@ public class Typer : MonoBehaviour
                 EnterLetter(keysPressed);
         }
     }
+    void ResetWord()
+    {
+        timer = originalTime * currentWord.Length;
+        currentWordText.text = currentWord;
+        currentWordProgress = string.Empty;
+        currentProgressText.text = currentWordProgress;
+    }
 
     void EnterLetter(string typedLetter)
     {
-        Debug.Log("Typed letter: " + typedLetter);
         if(IsCorrectLetter(typedLetter))
         {
             AddLetter(typedLetter);
@@ -94,23 +112,16 @@ public class Typer : MonoBehaviour
                 SetCurrentWord();
             }
         } else{
-            //Debug.Log("Wrong letter");
-            Debug.Log("Current Progress:" + currentWordProgress);
             wrongLetterEvent.Invoke();
         }
     }
 
     bool IsCorrectLetter(string letter)
     {
-        Debug.Log("Next Letter: " + currentWord[currentWordProgress.Length]);
-        Debug.Log(letter[0]);
-        Debug.Log(nextLetter[0]);
         return letter[0] == nextLetter[0];
     }
     void AddLetter(string typedLetter)
     {
-       // Debug.Log("Adding letter: " + typedLetter);
-       // Debug.Log("Current word progress: " + currentWordProgress);
         currentWordProgress += typedLetter;
         SetRemainingWord();
     }
@@ -128,5 +139,23 @@ public class Typer : MonoBehaviour
     {
         return timer;
     }
-
+    private void CalculateScore()
+    {
+        score += Mathf.FloorToInt(currentWord.Length * timer);
+    }
+    private void OnDestroy()
+    {
+        enemyController.RemoveEnemy(transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
+    }
+    private void decreaseHealth()
+    {
+        health -= 0;
+        Debug.Log("Health: " + health);
+        if(health <= 0)
+        {
+            Debug.Log("Game Over");
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+    }
 }
