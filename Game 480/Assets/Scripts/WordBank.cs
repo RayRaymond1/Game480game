@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WordBank : MonoBehaviour
 {
-    private List<string> originalWords = new List<string> 
+    public List<string> originalWords = new List<string> 
     { 
         "Honor", "Strength", "Skill", "Clarity", "Loyalty", "Mastery", "Bushido"
     };
