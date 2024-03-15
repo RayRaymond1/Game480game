@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class EnemyMovement : MonoBehaviour
 {
     public Typer typer;
-    public NewBehaviourScript mainCamera;
+    public GameObject mainCamera;
     public UnityEvent sceneStart;
     public float shoveDistance = 1f;     
     public float shoveTimeIncrease = 5f; 
@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public float stopDistance = 3f; 
     private bool reseting = false;
     public float jumpBackTime = 0.5f;
+    public EnemyController enemyController;
 
     void Awake()
     {
