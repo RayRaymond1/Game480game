@@ -98,6 +98,7 @@ public class Typer : MonoBehaviour
         currentWordText.text = currentWord;
         currentWordProgress = string.Empty;
         currentProgressText.text = currentWordProgress;
+        nextLetter = currentWord;
     }
 
     void EnterLetter(string typedLetter)
