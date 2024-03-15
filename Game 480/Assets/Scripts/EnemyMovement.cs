@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class EnemyMovement : MonoBehaviour
 {
     public Typer typer;
-    public Camera mainCamera;
+    public NewBehaviourScript mainCamera;
     public UnityEvent sceneStart;
     public float shoveDistance = 1f;     
     public float shoveTimeIncrease = 5f; 
