@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         sceneStart.AddListener(OnSceneStart);
         typer.wordFailedEvent.AddListener(wordFailed);
         typer.wordCompleteEvent.AddListener(wordCompleted);
-        attackEnd.AddListener(StartCoroutine(JumpBack(initialPosition)));
+        attackEnd.AddListener(JumpBack(initialPosition));
     }
 
     void OnSceneStart()
@@ -44,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
         attackEnd.Invoke();
     }
     void wordCompleted(){
-        StartCoroutine(JumpBack(initialPosition));
+        JumpBack(initialPosition);
     }
 
     void Start()
@@ -67,7 +67,11 @@ public class EnemyMovement : MonoBehaviour
         typer.IncreaseTime(shoveTimeIncrease);
     }
 
-    IEnumerator JumpBack(Vector3 endPosition)
+    void JumpBack(Vector3 endPosition)
+    {
+        StartCoroutine(JumpBackCoroutine(endPosition));
+    }
+    IEnumerator JumpBackCoroutine(Vector3 endPosition)
     {
         Vector3 startPosition = transform.position;
         float progress = 0;
