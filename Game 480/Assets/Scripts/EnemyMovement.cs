@@ -16,12 +16,15 @@ public class EnemyMovement : MonoBehaviour
     private bool reseting = false;
     public float jumpBackTime = 0.5f;
     public EnemyController enemyController;
+    public UnityEvent reachPlayer;
+    public UnityEvent attackEnd;
 
     void Awake()
     {
         sceneStart.AddListener(OnSceneStart);
         typer.wordFailedEvent.AddListener(wordFailed);
         typer.wordCompleteEvent.AddListener(wordCompleted);
+        attackEnd.AddListener(StartCoroutine(JumpBack(initialPosition)));
     }
 
     void OnSceneStart()
@@ -33,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
     }
     
     void wordFailed(){
-        StartCoroutine(JumpBack(initialPosition));
+        reachPlayer.Invoke();
     }
     void wordCompleted(){
         StartCoroutine(JumpBack(initialPosition));
