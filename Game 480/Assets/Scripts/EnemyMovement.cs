@@ -36,7 +36,12 @@ public class EnemyMovement : MonoBehaviour
     }
     
     void wordFailed(){
+        StartCoroutine(WordFailedCoroutine());
+    }
+    IEnumerator WordFailedCoroutine(){
         reachPlayer.Invoke();
+        yield return new WaitForSeconds(1);
+        attackEnd.Invoke();
     }
     void wordCompleted(){
         StartCoroutine(JumpBack(initialPosition));
