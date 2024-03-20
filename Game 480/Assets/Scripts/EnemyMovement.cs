@@ -7,7 +7,6 @@ public class EnemyMovement : MonoBehaviour
 {
     public Typer typer;
     public GameObject mainCamera;
-    public UnityEvent sceneStart;
     public float shoveDistance = 1f;     
     public float shoveTimeIncrease = 5f; 
     private Vector3 initialPosition; 
@@ -15,26 +14,22 @@ public class EnemyMovement : MonoBehaviour
     public float stopDistance = 3f; 
     private bool reseting = false;
     public float jumpBackTime = 0.5f;
-    public EnemyController enemyController;
     public UnityEvent reachPlayer;
     public UnityEvent attackEnd;
 
     void Awake()
     {
-        sceneStart.AddListener(OnSceneStart);
-        typer.wordFailedEvent.AddListener(wordFailed);
-        typer.wordCompleteEvent.AddListener(wordCompleted);
-        attackEnd.AddListener(JumpBack(initialPosition));
-    }
-
-    void OnSceneStart()
-    {
+        //Gets position of the enemy and the player and calculate where the enemy should stop
         initialPosition = transform.position;
         stopPoint = mainCamera.transform.position - initialPosition;
         stopPoint = stopPoint - stopPoint.normalized * stopDistance;
         stopPoint = stopPoint + initialPosition;
+        //Add functions to the events
+        typer.wordFailedEvent.AddListener(wordFailed);
+        typer.wordCompleteEvent.AddListener(wordCompleted);
+        attackEnd.AddListener(JumpBack);
     }
-    
+    //Functions for when the word is completed or failed
     void wordFailed(){
         StartCoroutine(WordFailedCoroutine());
     }
@@ -44,32 +39,28 @@ public class EnemyMovement : MonoBehaviour
         attackEnd.Invoke();
     }
     void wordCompleted(){
-        JumpBack(initialPosition);
-    }
-
-    void Start()
-    {
-        sceneStart.Invoke();
+        JumpBack();
     }
 
     void Update()
     { 
+        //Moves the enemy to the stop point
         if(!reseting){
             float distance = Vector3.Distance(transform.position, stopPoint);
             float speed = distance / typer.GetTime();
             transform.position = Vector3.MoveTowards(transform.position, stopPoint, speed * Time.deltaTime);
         }
     }
-
+    //NOT IMPLEMENTED YET
     public void Shove()
     {
         transform.position = transform.position + new Vector3(0, 0, shoveDistance);
         typer.IncreaseTime(shoveTimeIncrease);
     }
-
-    void JumpBack(Vector3 endPosition)
+    //Jump back to the initial position
+    void JumpBack()
     {
-        StartCoroutine(JumpBackCoroutine(endPosition));
+        StartCoroutine(JumpBackCoroutine(initialPosition));
     }
     IEnumerator JumpBackCoroutine(Vector3 endPosition)
     {
