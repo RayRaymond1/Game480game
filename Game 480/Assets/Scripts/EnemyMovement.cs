@@ -16,12 +16,15 @@ public class EnemyMovement : MonoBehaviour
     private bool reseting = false;
     public float jumpBackTime = 0.5f;
     public EnemyController enemyController;
+    public UnityEvent reachPlayer;
+    public UnityEvent attackEnd;
 
     void Awake()
     {
         sceneStart.AddListener(OnSceneStart);
         typer.wordFailedEvent.AddListener(wordFailed);
         typer.wordCompleteEvent.AddListener(wordCompleted);
+        attackEnd.AddListener(JumpBack(initialPosition));
     }
 
     void OnSceneStart()
@@ -33,10 +36,15 @@ public class EnemyMovement : MonoBehaviour
     }
     
     void wordFailed(){
-        StartCoroutine(JumpBack(initialPosition));
+        StartCoroutine(WordFailedCoroutine());
+    }
+    IEnumerator WordFailedCoroutine(){
+        reachPlayer.Invoke();
+        yield return new WaitForSeconds(1);
+        attackEnd.Invoke();
     }
     void wordCompleted(){
-        StartCoroutine(JumpBack(initialPosition));
+        JumpBack(initialPosition);
     }
 
     void Start()
@@ -59,7 +67,11 @@ public class EnemyMovement : MonoBehaviour
         typer.IncreaseTime(shoveTimeIncrease);
     }
 
-    IEnumerator JumpBack(Vector3 endPosition)
+    void JumpBack(Vector3 endPosition)
+    {
+        StartCoroutine(JumpBackCoroutine(endPosition));
+    }
+    IEnumerator JumpBackCoroutine(Vector3 endPosition)
     {
         Vector3 startPosition = transform.position;
         float progress = 0;
