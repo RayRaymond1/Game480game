@@ -1744,6 +1744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSlider: {fileID: 0}
   soundEffectsSlider: {fileID: 0}
+  backgroundAudio: {fileID: 0}
+  soundEffectsAudio: []
 --- !u!1 &726172103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,6 +3619,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSlider: {fileID: 364079407}
   soundEffectsSlider: {fileID: 867707624}
+  backgroundAudio: {fileID: 0}
+  soundEffectsAudio: []
 --- !u!4 &2147345090
 Transform:
   m_ObjectHideFlags: 0
