@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
     public float stopDistance = 3f; 
     private bool reseting = false;
     public float jumpBackTime = 0.5f;
+
+    public int jumpBackWaitTime;
     public UnityEvent reachPlayer;
     public UnityEvent attackEnd;
 
@@ -35,7 +37,7 @@ public class EnemyMovement : MonoBehaviour
     }
     IEnumerator WordFailedCoroutine(){
         reachPlayer.Invoke();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(jumpBackWaitTime);
         attackEnd.Invoke();
     }
     void wordCompleted(){
