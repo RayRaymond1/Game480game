@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/* `using UnityEn` is not a valid C# namespace or directive. It seems like you were trying to reference
-`UnityEvent` from the `UnityEngine.Events` namespace. To use `UnityEvent` in your script, you need
-to include the correct namespace at the beginning of your script like this: */
 using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
