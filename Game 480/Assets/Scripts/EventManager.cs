@@ -11,4 +11,15 @@ public class EventManager : MonoBehaviour
     public UnityEvent correctLetterEvent;
     public UnityEvent wrongLetterEvent;
     public UnityEvent wordBankComplete;
+    public UnityEvent levelComplete;
+    public List<GameObject> cutscenesToStart;
+    public bool cutScene = false;
+    private int nextCutscene = 0;
+    void Start(){
+        levelComplete.AddListener(SwitchEvents);
+    }
+    void SwitchEvents(){
+        cutscenesToStart[nextCutscene].SetActive(true);
+        nextCutscene++;
+    }
 }

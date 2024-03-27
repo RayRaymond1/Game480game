@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     public bool reseting = false;
     private bool newWord = false;
     public bool inRange = false;
-    public float speedScalar = .1f;
+    public float speedScalar = 6f;
     
     void Awake(){
         enemyReferences = GetComponent<EnemyReferences>(); 
@@ -43,7 +43,13 @@ public class EnemyAI : MonoBehaviour
         LookAtTarget();
         enemyReferences.animator.SetBool("Attacking", inRange);
         enemyReferences.animator.SetBool("Reseting", reseting);
-        setSpeed(1f/enemyReferences.typer.currentWord.Length * speedScalar);
+        if(enemyReferences.typer.currentWord.Length > 0 && !reseting){
+            setSpeed(1f/enemyReferences.typer.currentWord.Length * speedScalar);
+        }else if (reseting){
+            setSpeed(7);
+        }else {
+            setSpeed(1);
+        }
     }
 }
     void LookAtTarget(){
@@ -75,7 +81,6 @@ public class EnemyAI : MonoBehaviour
         newWord = true;
     }
     void setSpeed(float speed){
-        Debug.Log(speed);
         enemyReferences.agent.speed = speed;
     }
 }

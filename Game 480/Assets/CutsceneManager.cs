@@ -11,6 +11,8 @@ public class CutsceneManager : MonoBehaviour
     PlayableDirector director;
     CinemachineBrain brain;
     GameObject playerView;
+    public GameObject EnemiesToLoad = null;
+    public EventManager eventManager;
 
     void Start(){
         director = this.GetComponent<PlayableDirector>();
@@ -19,13 +21,23 @@ public class CutsceneManager : MonoBehaviour
     }
 
     public void onCutsceneStart(){
+        eventManager.cutScene = true;
         playerView.gameObject.SetActive(false);
         TimelineAsset timeline = (TimelineAsset)director.playableAsset;
         director.SetGenericBinding(timeline.GetOutputTrack(0), brain);
     }
 
     public void OnCutsceneEnd(){
+        eventManager.cutScene = false;
         playerView.gameObject.SetActive(true);
         Destroy(this.gameObject);
+        EnableEnemies();
+    }
+    public void EnableEnemies()
+    {
+        if(EnemiesToLoad == null){
+            return;
+        }
+        EnemiesToLoad.SetActive(true);
     }
 }

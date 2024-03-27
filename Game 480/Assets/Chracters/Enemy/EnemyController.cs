@@ -7,8 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     private List<object> EnemyList = new List<object>();
     private int currentEnemy = 0;
-    public UnityEvent changeEnemyEvent;
-    private bool hasRun = false;
+    public EventManager eventManager;
+    //private bool hasRun = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,20 +27,15 @@ public class EnemyController : MonoBehaviour
                 currentEnemy = 0;
             }
         }
-        GameObject currentEnemyObject = GetCurrentEnemy() as GameObject;
-        if(currentEnemyObject != null)
-        {
-            Vector3 pos = currentEnemyObject.transform.position;
-            transform.position = new Vector3(pos.x, pos.y + 2, pos.z);
-        }
-        if(currentEnemyObject == null)
-        {
-            if(!hasRun)
+        if(EnemyList.Count > 0){
+            GameObject currentEnemyObject = GetCurrentEnemy() as GameObject;
+            if(currentEnemyObject != null)
             {
-                changeEnemyEvent.Invoke();
-                hasRun = true;
+                Vector3 pos = currentEnemyObject.transform.position;
+                transform.position = new Vector3(pos.x, pos.y + 2, pos.z);
             }
-            transform.position = new Vector3(0, 1000, 0);
+        }else if(!eventManager.cutScene){
+            eventManager.levelComplete.Invoke();
         }
     }
 
