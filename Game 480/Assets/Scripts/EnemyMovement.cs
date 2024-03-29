@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -34,6 +34,7 @@ public class EnemyMovement : MonoBehaviour
     //Functions for when the word is completed or failed
     void wordFailed(){
         StartCoroutine(WordFailedCoroutine());
+        
     }
     IEnumerator WordFailedCoroutine(){
         reachPlayer.Invoke();
@@ -81,3 +82,4 @@ public class EnemyMovement : MonoBehaviour
     }
 
 }
+*/
