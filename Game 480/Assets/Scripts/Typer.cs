@@ -4,8 +4,18 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
+
+
+
+
+
+
 public class Typer : MonoBehaviour
 {
+
+    
+
+
     public TMP_Text currentWordText = null;
     public TMP_Text currentProgressText = null;
     public WordBank wordBank = null;
@@ -23,8 +33,8 @@ public class Typer : MonoBehaviour
     private bool cutScene = false;
     private string nextLetter = string.Empty;
     public EnemyController enemyController;
-    private int score = 0;
-    private int health = 100;
+    public int score = 0;
+    public int health = 100;
     [SerializeField] private bool multipleWords = false;
 
     void Start()
@@ -140,7 +150,7 @@ public class Typer : MonoBehaviour
     {
         return timer;
     }
-    private void CalculateScore()
+    public void CalculateScore()
     {
         score += Mathf.FloorToInt(currentWord.Length * timer);
     }
@@ -149,10 +159,12 @@ public class Typer : MonoBehaviour
         enemyController.RemoveEnemy(transform.parent.gameObject);
         Destroy(transform.parent.gameObject);
     }
-    private void decreaseHealth()
+    public void decreaseHealth()
     {
         health -= 0;
         Debug.Log("Health: " + health);
+        
+        
         if(health <= 0)
         {
             Debug.Log("Game Over");
