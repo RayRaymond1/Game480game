@@ -9,6 +9,7 @@ public class Mainmenucontroller : MonoBehaviour
 
     public void Playgame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     public void Option() {
@@ -28,5 +29,11 @@ public class Mainmenucontroller : MonoBehaviour
 
        Application.Quit();
 
+    }
+    public void LoadMenu() {
+        SceneManager.LoadScene("mainmenutitle");
+    }
+    public void Gameover() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
     }
 }

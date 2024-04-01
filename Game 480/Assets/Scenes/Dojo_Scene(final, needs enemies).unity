@@ -1217,6 +1217,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &548291966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1099651971127810566, guid: 40a929a99f81bcf48b2db2cb921405b3, type: 3}
+  m_PrefabInstance: {fileID: 2276458074368776878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b751beb25b4fe49a8a86afb9aa5846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &567282179
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,9 +4847,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1331537970}
   scoreCount: 0
-  score: {fileID: 0}
+  score: {fileID: 548291966}
 --- !u!222 &1331537972
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5270,7 +5281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1517557951
 RectTransform:
   m_ObjectHideFlags: 0

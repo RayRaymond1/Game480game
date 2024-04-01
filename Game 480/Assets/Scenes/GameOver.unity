@@ -1841,7 +1841,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1031048797}
         m_TargetAssemblyTypeName: Mainmenucontroller, Assembly-CSharp
-        m_MethodName: Playgame
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 2089090883}
   - component: {fileID: 2089090882}
   m_Layer: 5
-  m_Name: Play
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
