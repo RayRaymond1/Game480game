@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     private List<object> EnemyList = new List<object>();
     private int currentEnemy = 0;
-    public EventManager eventManager;
+    public EventManager eventManagerObject;
     //private bool hasRun = false;
 
     // Start is called before the first frame update
@@ -34,8 +34,8 @@ public class EnemyController : MonoBehaviour
                 Vector3 pos = currentEnemyObject.transform.position;
                 transform.position = new Vector3(pos.x, pos.y + 2.5f, pos.z);
             }
-        }else if(!eventManager.cutScene){
-            eventManager.levelComplete.Invoke();
+        }else if(!eventManagerObject.cutScene){
+            eventManagerObject.levelComplete.Invoke();
         }
     }
 
