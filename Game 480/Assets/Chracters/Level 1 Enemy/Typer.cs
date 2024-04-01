@@ -12,7 +12,7 @@ public class Typer : MonoBehaviour
     public string currentWord = string.Empty;
     private string currentWordProgress = string.Empty;
     private string nextLetter = string.Empty;
-    private int score = 0;
+    public int score = 0;
     private int health = 100;
     void Awake()
     {
@@ -23,11 +23,11 @@ public class Typer : MonoBehaviour
     {
         SetCurrentWord();
         EnemyLoaded();
-        enemyReferences.eventManager.wordCompleteEvent.AddListener(CalculateScore);
-        enemyReferences.eventManager.wordFailedEvent.AddListener(decreaseHealth);
-        enemyReferences.eventManager.wordFailedEvent.AddListener(ResetWordFail);
-        enemyReferences.eventManager.wordBankComplete.AddListener(OnDestroy);
-        enemyReferences.eventManager.ResetWord.AddListener(SetCurrentWord);
+        enemyReferences.eventManagerEnemy.wordCompleteEvent.AddListener(CalculateScore);
+        enemyReferences.eventManagerEnemy.wordFailedEvent.AddListener(decreaseHealth);
+        enemyReferences.eventManagerEnemy.wordFailedEvent.AddListener(ResetWordFail);
+        enemyReferences.eventManagerEnemy.wordBankComplete.AddListener(OnDestroy);
+        enemyReferences.eventManagerEnemy.ResetWord.AddListener(SetCurrentWord);
     }
 
     void SetCurrentWord()
@@ -36,7 +36,7 @@ public class Typer : MonoBehaviour
         nextLetter = currentWord;
         if(string.IsNullOrEmpty(currentWord))
         {
-            enemyReferences.eventManager.wordBankComplete.Invoke();
+            enemyReferences.eventManagerEnemy.wordBankComplete.Invoke();
             return;
         }
         currentWordText.text = currentWord;
@@ -86,13 +86,13 @@ public class Typer : MonoBehaviour
         if(IsCorrectLetter(typedLetter))
         {
             AddLetter(typedLetter);
-            enemyReferences.eventManager.correctLetterEvent.Invoke();
+            enemyReferences.eventManagerEnemy.correctLetterEvent.Invoke();
             if(IsWordComplete())
             {
-                enemyReferences.eventManager.wordCompleteEvent.Invoke();
+                enemyReferences.eventManagerEnemy.wordCompleteEvent.Invoke();
             }
         } else{
-            enemyReferences.eventManager.wrongLetterEvent.Invoke();
+            enemyReferences.eventManagerEnemy.wrongLetterEvent.Invoke();
         }
     }
 
@@ -110,7 +110,7 @@ public class Typer : MonoBehaviour
     {
         return currentWordProgress == currentWord;
     }
-    private void CalculateScore()
+    public void CalculateScore()
     {
         score += Mathf.FloorToInt(currentWord.Length * Vector3.Distance(transform.position, enemyReferences.target.position));
     }
@@ -126,7 +126,7 @@ public class Typer : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log("Game Over");
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
     }
 }

@@ -1463,6 +1463,7 @@ GameObject:
   - component: {fileID: 1121977900839030117}
   - component: {fileID: 218198588022425367}
   - component: {fileID: 3358335541399680690}
+  - component: {fileID: 455810073731676177}
   m_Layer: 0
   m_Name: Robot_Soldier_Black
   m_TagString: Untagged
@@ -1588,7 +1589,8 @@ MonoBehaviour:
   wordBank: {fileID: 0}
   enemyController: {fileID: 0}
   target: {fileID: 0}
-  eventManager: {fileID: 0}
+  eventManagerObject: {fileID: 0}
+  eventManagerEnemy: {fileID: 0}
   typer: {fileID: 0}
   enemyAI: {fileID: 0}
   pathUpdateDelay: 0.1
@@ -1607,6 +1609,41 @@ MonoBehaviour:
   currentWordText: {fileID: 3487249675093158902}
   currentProgressText: {fileID: 5360121732174378023}
   currentWord: 
+--- !u!114 &455810073731676177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659855810431100170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a558cec268ebe974b9fa22070fa032a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordFailedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  wordCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  ResetWord:
+    m_PersistentCalls:
+      m_Calls: []
+  correctLetterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  wrongLetterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  wordBankComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  levelComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  cutscenesToStart: []
+  cutScene: 0
 --- !u!1 &4822669434087972225
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class EnemyReferences : MonoBehaviour
     public WordBank wordBank;
     public EnemyController enemyController;
     public Transform target;
-    public EventManager eventManager;
+    public EventManager eventManagerObject;
+    public EventManager eventManagerEnemy;
     public Typer typer;
     public EnemyAI enemyAI;
     [Header("Stats")]
@@ -23,6 +24,13 @@ public class EnemyReferences : MonoBehaviour
         wordBank = GetComponent<WordBank>();
         typer = GetComponent<Typer>();
         enemyAI = GetComponent<EnemyAI>();
+        eventManagerEnemy = GetComponent<EventManager>();
+        eventManagerEnemy.wordFailedEvent.AddListener(eventManagerObject.wordFailedEvent.Invoke);
+        eventManagerEnemy.wordCompleteEvent.AddListener(eventManagerObject.wordCompleteEvent.Invoke);
+        eventManagerEnemy.correctLetterEvent.AddListener(eventManagerObject.correctLetterEvent.Invoke);
+        eventManagerEnemy.wrongLetterEvent.AddListener(eventManagerObject.wrongLetterEvent.Invoke);
+        eventManagerEnemy.wordBankComplete.AddListener(eventManagerObject.wordBankComplete.Invoke);
+        //eventManagerEnemy.levelComplete.AddListener(eventManagerObject.levelComplete.Invoke);
     }
 
     // Update is called once per frame

@@ -21,29 +21,29 @@ public class EnemyAI : MonoBehaviour
     }
     void Start(){
         stopDistance = enemyReferences.agent.stoppingDistance;
-        enemyReferences.eventManager.wordCompleteEvent.AddListener(CompleteWord);
+        enemyReferences.eventManagerEnemy.wordCompleteEvent.AddListener(CompleteWord);
     }
     void Update()
     {
     if(enemyReferences.target != null){
         inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .42f;
-        Debug.Log("Distance: " + Vector3.Distance(transform.position, startPosition));
+        Debug.Log(Vector3.Distance(transform.position, startPosition));
         if(reseting){
             UpdatePath(startPosition);
-            Debug.Log("Resetting");
         } else{
             UpdatePath(enemyReferences.target.position);
             if(newWord){
                 newWord = false;
-                enemyReferences.eventManager.ResetWord.Invoke();
+                enemyReferences.eventManagerEnemy.ResetWord.Invoke();
             }
         }
-        if(Vector3.Distance(transform.position, startPosition) <= 0.22f){
+        if(Vector3.Distance(transform.position, startPosition) <= 0.25f){
             reseting = false;
         }
         LookAtTarget();
         enemyReferences.animator.SetBool("Attacking", inRange);
-        enemyReferences.animator.SetBool("Reseting", reseting);
+        enemyReferences.animator.SetBool("Reseting", reseting)
+        ;
         if(enemyReferences.typer.currentWord.Length > 0 && !reseting){
             setSpeed(1f/enemyReferences.typer.currentWord.Length * speedScalar);
         }else if (reseting){
@@ -75,7 +75,7 @@ public class EnemyAI : MonoBehaviour
         reseting = true;
     }
     void AttackStart(){
-        enemyReferences.eventManager.wordFailedEvent.Invoke();
+        enemyReferences.eventManagerEnemy.wordFailedEvent.Invoke();
     }
     void CompleteWord(){
         reseting = true;
