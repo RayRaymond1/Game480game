@@ -12,7 +12,7 @@ public class Typer : MonoBehaviour
     public string currentWord = string.Empty;
     private string currentWordProgress = string.Empty;
     private string nextLetter = string.Empty;
-    private int score = 0;
+    public int score = 0;
     private int health = 100;
     void Awake()
     {
@@ -110,7 +110,7 @@ public class Typer : MonoBehaviour
     {
         return currentWordProgress == currentWord;
     }
-    private void CalculateScore()
+    public void CalculateScore()
     {
         score += Mathf.FloorToInt(currentWord.Length * Vector3.Distance(transform.position, enemyReferences.target.position));
     }
