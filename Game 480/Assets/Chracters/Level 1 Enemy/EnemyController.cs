@@ -8,24 +8,20 @@ public class EnemyController : MonoBehaviour
     private List<object> EnemyList = new List<object>();
     private int currentEnemy = 0;
     public EventManager eventManagerObject;
-    //private bool hasRun = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public GameObject Boss = null;
     void Update()
     {
+        if(Boss != null)
+        {
+            bool canAttackBoss = CanAttackBoss();
+            if(!canAttackBoss && GetCurrentEnemy() == Boss)
+            {
+                NextEnemy();
+            }
+        }
         if(Input.GetKeyDown("space"))
         {
-            currentEnemy++;
-            if(currentEnemy >= EnemyList.Count)
-            {
-                currentEnemy = 0;
-            }
+            NextEnemy();
         }
         if(EnemyList.Count > 0){
             GameObject currentEnemyObject = GetCurrentEnemy() as GameObject;
@@ -58,5 +54,26 @@ public class EnemyController : MonoBehaviour
             return null;
         }
         return EnemyList[currentEnemy];
+    }
+    private bool CanAttackBoss()
+    {
+        foreach(GameObject enemy in EnemyList)
+        {
+            if(enemy != null && enemy != Boss)
+            {
+                Typer typer = enemy.GetComponent<Typer>();
+                if(typer != null && !typer.isWordComplete)
+                    return false;
+            }
+        }
+        return true;
+    }
+    private void NextEnemy()
+    {
+        currentEnemy++;
+        if(currentEnemy >= EnemyList.Count)
+        {
+            currentEnemy = 0;
+        }
     }
 }

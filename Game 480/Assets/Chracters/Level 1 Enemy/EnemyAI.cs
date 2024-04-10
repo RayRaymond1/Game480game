@@ -27,7 +27,6 @@ public class EnemyAI : MonoBehaviour
     {
     if(enemyReferences.target != null){
         inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .42f;
-        Debug.Log(Vector3.Distance(transform.position, startPosition));
         if(reseting){
             UpdatePath(startPosition);
         } else{
@@ -41,6 +40,9 @@ public class EnemyAI : MonoBehaviour
             reseting = false;
         }
         LookAtTarget();
+        if(inRange){
+            AttackStart();
+        }
         enemyReferences.animator.SetBool("Attacking", inRange);
         enemyReferences.animator.SetBool("Reseting", reseting)
         ;

@@ -14,6 +14,7 @@ public class Typer : MonoBehaviour
     private string nextLetter = string.Empty;
     public int score = 0;
     private int health = 100;
+    public bool isWordComplete = false;
     void Awake()
     {
         enemyReferences = GetComponent<EnemyReferences>();
@@ -32,6 +33,7 @@ public class Typer : MonoBehaviour
 
     void SetCurrentWord()
     {
+        isWordComplete = false;
         currentWord = enemyReferences.wordBank.GetWord();
         nextLetter = currentWord;
         if(string.IsNullOrEmpty(currentWord))
@@ -61,16 +63,20 @@ public class Typer : MonoBehaviour
 
     void CheckInput()
     {
-        if(canInput())
+        if (!isWordComplete && canInput() && Input.inputString != string.Empty)
         {
             string keysPressed = Input.inputString;
-            
-            if(keysPressed.Length == 1)
+
+            if (keysPressed.Length == 1)
                 EnterLetter(keysPressed);
         }
     }
     bool canInput()
     {
+        if (isWordComplete)
+            return false;
+        if(enemyReferences.enemyAI == null)
+            return Input.anyKeyDown && enemyReferences.enemyController.GetCurrentEnemy() == transform.gameObject;
         return Input.anyKeyDown && !enemyReferences.enemyAI.reseting && enemyReferences.enemyController.GetCurrentEnemy() == transform.gameObject && !enemyReferences.enemyAI.inRange;
     }
     void ResetWordFail()
@@ -108,7 +114,9 @@ public class Typer : MonoBehaviour
 
     bool IsWordComplete()
     {
-        return currentWordProgress == currentWord;
+        isWordComplete = currentWordProgress == currentWord;
+
+        return isWordComplete;
     }
     public void CalculateScore()
     {

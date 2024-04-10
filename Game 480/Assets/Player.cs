@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class Player : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public Image healthBar;
-    Typer class1  = new Typer();
+    public float damage;
+    public EventManager eventManagerObject;
 
     
 
@@ -21,22 +23,28 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         
     }
+    void Awake(){
+        eventManagerObject.wordFailedEvent.AddListener(TakeDamage);
+        eventManagerObject.wordFailedEvent.AddListener(DamageTaken);
+    }
 
     // Update is called once per frame
     void Update()
-    { // not game prod, should only be for testing
-        healthBar.fillAmount = Mathf.Clamp(currentHealth/maxHealth, 0, 1);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-
-    }
-    void TakeDamage(int damage)
     {
+        healthBar.fillAmount = Mathf.Clamp(currentHealth/maxHealth, 0, 1);
+    }
+    void TakeDamage()
+    {
+        if(damage == 0)
+        {
+            damage = 20;
+        }
         currentHealth -= damage;
 
         
+    }
+    void DamageTaken(){
+        Debug.Log("Damage Taken");
     }
 
 }
