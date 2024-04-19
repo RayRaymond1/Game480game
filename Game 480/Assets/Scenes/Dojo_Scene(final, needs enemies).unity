@@ -6599,7 +6599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9283e88105c7b941a4c2c0bdbcd8cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1032266230}
   EventManagerObject: {fileID: 1666338189}
 --- !u!114 &1032266230
 MonoBehaviour:
