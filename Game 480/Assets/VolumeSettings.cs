@@ -16,12 +16,15 @@ public class VolumeSettings : MonoBehaviour
     public AudioSource backgroundAudio;
     public AudioSource[] soundEffectsAudio;
 
+    
+
 
     void Start()
     {
+        
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0) {
-            backgroundFloat = 0.125f;
+            backgroundFloat = 1.0f;
             soundEffectsFloat = 0.75f;
             backgroundSlider.value = backgroundFloat;
             soundEffectsSlider.value = soundEffectsFloat;
