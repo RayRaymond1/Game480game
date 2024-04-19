@@ -1998,7 +1998,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1031048797}
         m_TargetAssemblyTypeName: Mainmenucontroller, Assembly-CSharp
-        m_MethodName: Playgame
+        m_MethodName: LoadPreviousScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
