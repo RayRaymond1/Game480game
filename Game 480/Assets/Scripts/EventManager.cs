@@ -15,6 +15,7 @@ public class EventManager : MonoBehaviour
     public List<GameObject> cutscenesToStart;
     public bool cutScene = false;
     private int nextCutscene = 0;
+    public int score = 0;
     void Start(){
         levelComplete.AddListener(SwitchEvents);
     }
