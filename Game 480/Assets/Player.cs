@@ -3,40 +3,41 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
 
-    public float maxHealth;
+    public float maxHealth = 100;
     public float currentHealth;
     public Image healthBar;
-    Typer class1  = new Typer();
+    public float damage = 20;
+    public EventManager eventManagerObject;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
-
         currentHealth = maxHealth;
-        
+    }
+    void Awake(){
+        eventManagerObject.wordFailedEvent.AddListener(TakeDamage);
+        eventManagerObject.wordFailedEvent.AddListener(DamageTaken);
     }
 
     // Update is called once per frame
     void Update()
-    { // not game prod, should only be for testing
+    {
         healthBar.fillAmount = Mathf.Clamp(currentHealth/maxHealth, 0, 1);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-
     }
-    void TakeDamage(int damage)
+    void TakeDamage()
     {
         currentHealth -= damage;
-
-        
+    }
+    void DamageTaken(){
+        Debug.Log("Damage Taken");
+        Debug.Log(currentHealth);
     }
 
 }
