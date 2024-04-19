@@ -9794,10 +9794,6 @@ PrefabInstance:
     - target: {fileID: 5950328911067048974, guid: 2bdae95b2190f684b887fd315fbf1137, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 6090112015361021605}
-    - target: {fileID: 5950328911067048974, guid: 2bdae95b2190f684b887fd315fbf1137, type: 3}
-      propertyPath: enemyController
-      value: 
       objectReference: {fileID: 9100000, guid: 3518be0cd9c20674d971dd168dcb3945, type: 2}
     - target: {fileID: 6197842783580314662, guid: 40a929a99f81bcf48b2db2cb921405b3, type: 3}
       propertyPath: m_LocalPosition.z
