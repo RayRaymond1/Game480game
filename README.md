@@ -1,10 +1,10 @@
 # The Way of Words - Development Documentation
 
-## How to play the current version (Draft 3)
+## How to play the current version (Draft 4)
 
 1. Open the game file in Unity
 2. Open the scenes folder
-3. Click on Dojo Scene 1 for the cutscene or Dojo Scene 2 for the gameplay
+3. Click on Dojo_Scene(final, needs enemies)
 4. Click the play button
 
 ## [Design Document](https://docs.google.com/document/d/1RnADUqa4XkYSha4MJzp1s47EtEJZHQJguFQMNVEDugk/edit?usp=sharing)
@@ -33,7 +33,12 @@ This week, we collected some music to potentially use in the game. We tried to f
 
 ### 3-29-24
 
-To be added
+This week, we have just about completed level 1 and have begun building level 2. We worked on collecting assets for level 3 as well as assets for enemies. We also came up with a layout for level 3. In addition to this, the pause menu and dialogue for cutscenes and tutorials have been initiated. This is mostly from the UI perspective, however things are subject to change. The pause menu has three different buttons: resume, restart, and return. Both resume and restart are self-explanatory, however, return simply goes to the main menu. Dialogue boxes are another addition to the game, as they explain mechanics in the mechanics section, and often the story, users can click through them if they want to, however. The last edition is the health bar, simply put when the user gets attacked, the health bar will represent that by taking damage. After completely losing all your health, the user will be sent back to the game over screen, allowing them to restart the scene and try again if they would like.
+
+Regarding the enemies, there has been a lot of work done. The entire code for them has been overhauled with the exception of the typing section. The movement has been converted from manual calculations to an AI, animations have been added, and code has been compartmentalized for easier future use. The enemy is now almost finished. There are still some bugs that need to be fixed, like how when there are multiple enemies the events are called for all of them instead of being called for one.
+
+The script for Level 3’s opening cutscene has been reduced in length in order to more closely match the length of the previous cutscenes. It is still longer than we feel is necessary, so we may shorten it even more. We have also created a 50 second trailer for the game. It features gameplay and cutscene clips from the first level.
+
 
 ### 4-12-24
 
