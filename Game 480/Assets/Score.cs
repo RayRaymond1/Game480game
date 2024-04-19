@@ -9,15 +9,13 @@ using UnityEngine.UIElements;
 public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform player;
-    public Text scoreText;
-    public float scoreCount;
-    public Typer score = new Typer();
+    public TMP_Text scoreText;
+    public EventManager EventManagerObject;
+
     // Update is called once per frame
     void Update()
     {
-        score.CalculateScore();
-        scoreText.text = "Score "+Mathf.Round(score.score);
+        scoreText.text = "Score "+ EventManagerObject.score.ToString();
         
     }
 }

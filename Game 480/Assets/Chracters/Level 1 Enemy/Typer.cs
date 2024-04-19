@@ -149,7 +149,7 @@ public class Typer : MonoBehaviour
     // Calculate the score when a word is completed
     public void CalculateScore()
     {
-        score += Mathf.FloorToInt(currentWord.Length * Vector3.Distance(transform.position, enemyReferences.target.position));
+        enemyReferences.eventManagerObject.score += Mathf.FloorToInt(currentWord.Length * Vector3.Distance(transform.position, enemyReferences.target.position));
     }
 
     // Remove this enemy from the controller's list and destroy it when the word bank is complete
