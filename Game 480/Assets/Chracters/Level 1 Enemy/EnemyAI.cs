@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     private bool newWord = false;
     public bool inRange = false;
     public float speedScalar = 6f;
+    private bool attacking = false;
     
     void Awake(){
         enemyReferences = GetComponent<EnemyReferences>(); 
@@ -28,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     if(enemyReferences.target != null){
         inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .42f;
         if(reseting){
+            attacking = false;
             UpdatePath(startPosition);
         } else{
             UpdatePath(enemyReferences.target.position);
@@ -40,12 +42,12 @@ public class EnemyAI : MonoBehaviour
             reseting = false;
         }
         LookAtTarget();
-        if(inRange){
+        if(inRange && !attacking && !reseting){
             AttackStart();
+
         }
         enemyReferences.animator.SetBool("Attacking", inRange);
-        enemyReferences.animator.SetBool("Reseting", reseting)
-        ;
+        enemyReferences.animator.SetBool("Reseting", reseting);
         if(enemyReferences.typer.currentWord.Length > 0 && !reseting){
             setSpeed(1f/enemyReferences.typer.currentWord.Length * speedScalar);
         }else if (reseting){
@@ -75,9 +77,11 @@ public class EnemyAI : MonoBehaviour
     void AttackEnd(){
         enemyReferences.animator.SetBool("Attacking", false);
         reseting = true;
+        attacking = false;
     }
     void AttackStart(){
         enemyReferences.eventManagerEnemy.wordFailedEvent.Invoke();
+        attacking = true;
     }
     void CompleteWord(){
         reseting = true;

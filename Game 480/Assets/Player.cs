@@ -8,10 +8,10 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
 
-    public float maxHealth;
+    public float maxHealth = 100;
     public float currentHealth;
     public Image healthBar;
-    public float damage;
+    public float damage = 20;
     public EventManager eventManagerObject;
 
     
@@ -19,9 +19,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         currentHealth = maxHealth;
-        
     }
     void Awake(){
         eventManagerObject.wordFailedEvent.AddListener(TakeDamage);
@@ -35,16 +33,11 @@ public class Player : MonoBehaviour
     }
     void TakeDamage()
     {
-        if(damage == 0)
-        {
-            damage = 20;
-        }
         currentHealth -= damage;
-
-        
     }
     void DamageTaken(){
         Debug.Log("Damage Taken");
+        Debug.Log(currentHealth);
     }
 
 }

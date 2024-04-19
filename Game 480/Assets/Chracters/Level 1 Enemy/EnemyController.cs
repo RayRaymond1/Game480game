@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     private int currentEnemy = 0;
     public EventManager eventManagerObject;
     public GameObject Boss = null;
+    public float vertDisplacement = 2.5f;
     void Update()
     {
         if(Boss != null)
@@ -28,7 +29,7 @@ public class EnemyController : MonoBehaviour
             if(currentEnemyObject != null)
             {
                 Vector3 pos = currentEnemyObject.transform.position;
-                transform.position = new Vector3(pos.x, pos.y + 2.5f, pos.z);
+                transform.position = new Vector3(pos.x, pos.y + vertDisplacement, pos.z);
             }
         }else if(!eventManagerObject.cutScene){
             eventManagerObject.levelComplete.Invoke();
