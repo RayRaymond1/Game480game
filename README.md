@@ -53,7 +53,7 @@ Regarding the enemies, there has been a lot of work done. The entire code for th
 
 The script for Level 3’s opening cutscene has been reduced in length in order to more closely match the length of the previous cutscenes. It is still longer than we feel is necessary, so we may shorten it even more. We have also created a 50 second trailer for the game. It features gameplay and cutscene clips from the first level.
 
-### 4-12-24
+### 4-19-24
 
 This week, we finalized the game’s script and the design document as a whole. We also chose what music would play during each level, cutscene, and menu. We added assets for level 3 such as rooms and objects in the level. We created a layout for all of the enemies for level 3 and moved the wire boss to level 3. We collected sound effects to implement into the game as it nears completion.
 
