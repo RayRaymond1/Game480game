@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
         // If there is a target
         if(enemyReferences.target != null){
             // Check if the target is in range
-            inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .42f;
+            inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .6f;
 
             // If the enemy is resetting, move towards the start position
             if(reseting){
@@ -61,7 +61,7 @@ public class EnemyAI : MonoBehaviour
             }
 
             // If the enemy has reached the start position, stop resetting
-            if(Vector3.Distance(transform.position, startPosition) <= 0.25f){
+            if(Vector3.Distance(transform.position, startPosition) <= 0.4f){
                 reseting = false;
             }
 

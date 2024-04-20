@@ -15,6 +15,7 @@ public class EnemyAIBoss : MonoBehaviour
     public bool inRange = false;
     public float speedScalar = 6f;
     public List<GameObject> EnemyList = new List<GameObject>();
+    private bool attacking = false;
     
     void Awake(){
         enemyReferences = GetComponent<EnemyReferencesBoss>(); 
@@ -27,7 +28,9 @@ public class EnemyAIBoss : MonoBehaviour
     void Update()
     {
     if(enemyReferences.target != null){
-        inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .42f;
+        Debug.Log(Vector3.Distance(transform.position, enemyReferences.target.position));
+        Debug.Log(stopDistance + .45f);
+        inRange = Vector3.Distance(transform.position, enemyReferences.target.position) <= stopDistance + .6f;
         if(reseting){
             UpdatePath(startPosition);
         } else{
@@ -40,11 +43,11 @@ public class EnemyAIBoss : MonoBehaviour
                 }
             }
         }
-        if(Vector3.Distance(transform.position, startPosition) <= 0.25f){
+        if(Vector3.Distance(transform.position, startPosition) <= 0.3f){
             reseting = false;
         }
         LookAtTarget();
-        if(inRange){
+        if(inRange && !attacking && !reseting){
             AttackStart();
         }
         enemyReferences.animator.SetBool("Attacking", inRange);
@@ -79,9 +82,11 @@ public class EnemyAIBoss : MonoBehaviour
     void AttackEnd(){
         enemyReferences.animator.SetBool("Attacking", false);
         reseting = true;
+        attacking = false;
     }
     void AttackStart(){
         enemyReferences.eventManagerEnemy.wordFailedEvent.Invoke();
+        attacking = true;
     }
     void CompleteWord(){
         reseting = true;

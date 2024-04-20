@@ -471,7 +471,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -531,8 +531,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411851069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -18.707, y: 2.07, z: -42.342003}
+  m_LocalRotation: {x: 0.069073156, y: -0.07611282, z: 0.0050115897, w: 0.99469125}
+  m_LocalPosition: {x: 9.560595, y: 19.812899, z: -48.839237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -601,6 +601,22 @@ PrefabInstance:
     - target: {fileID: 4659855810431100170, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
       propertyPath: m_Name
       value: Robot_Soldier_Black (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659855810431100170, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[0]
+      value: Mastery
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[1]
+      value: Bushido
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2039,6 +2055,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_Soldier_Black (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4659855810431100170, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2345,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861501404186547673, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.707
+      value: -19.225
       objectReference: {fileID: 0}
     - target: {fileID: 6861501404186547673, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2353,7 +2377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6861501404186547673, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.372
+      value: -41.745
       objectReference: {fileID: 0}
     - target: {fileID: 6861501404186547673, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2490,6 +2514,10 @@ PrefabInstance:
     - target: {fileID: 3668966974176132595, guid: 1c4a79d31af3ba74fbf89ecfd4d085e6, type: 3}
       propertyPath: m_Name
       value: Cutscene4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668966974176132595, guid: 1c4a79d31af3ba74fbf89ecfd4d085e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3848009718493284163, guid: 1c4a79d31af3ba74fbf89ecfd4d085e6, type: 3}
       propertyPath: eventManager
@@ -2635,6 +2663,38 @@ PrefabInstance:
     - target: {fileID: 4659855810431100170, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
       propertyPath: m_Name
       value: Robot_Soldier_Black (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4659855810431100170, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[0]
+      value: Skill
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[1]
+      value: Clarity
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[2]
+      value: Loyalty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[3]
+      value: Loyalty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[4]
+      value: Mastery
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[5]
+      value: Bushido
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3172,6 +3232,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot_Soldier_Black
       objectReference: {fileID: 0}
+    - target: {fileID: 4659855810431100170, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[0]
+      value: Loyalty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333823175184881923, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
+      propertyPath: originalWords.Array.data[1]
+      value: Clarity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3311,6 +3387,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2105935034}
     m_Modifications:
+    - target: {fileID: 27644180433161374, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 179845736657642949, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.727124
@@ -3351,6 +3431,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1319935274711496477, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3042970790073448740, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
       propertyPath: target
       value: 
@@ -3387,6 +3471,10 @@ PrefabInstance:
       propertyPath: eventManagerObject
       value: 
       objectReference: {fileID: 1345531067}
+    - target: {fileID: 5587290041843675359, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6308320399058638527, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
       propertyPath: target
       value: 
@@ -3402,6 +3490,34 @@ PrefabInstance:
     - target: {fileID: 7331372561372509315, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7331372561372509315, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443286389965297474, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443286389965297474, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.data[1]
+      value: Strength
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722102544407613837, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855288674202398479, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855288674202398479, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.data[0]
+      value: Bushido
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855288674202398479, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
+      propertyPath: originalWords.Array.data[1]
+      value: Clarity
       objectReference: {fileID: 0}
     - target: {fileID: 8129054292505994999, guid: dda45cb6ae1ec1042a835a8b4626b653, type: 3}
       propertyPath: target
