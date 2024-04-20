@@ -114,15 +114,22 @@ public class EnemyController : MonoBehaviour
     }
     
     // Move to the next enemy
-    private void NextEnemy()
+private void NextEnemy()
+{
+    // Check if the list is empty
+    if(EnemyList.Count == 0)
     {
-        // Increment the current enemy index
-        currentEnemy++;
-        
-        // If the current enemy index is out of range, reset it to 0
-        if(currentEnemy >= EnemyList.Count)
-        {
-            currentEnemy = 0;
-        }
+        currentEnemy = 0;
+        return;
     }
+    
+    // Increment the current enemy index
+    currentEnemy++;
+    
+    // If the current enemy index is out of range, reset it to 0
+    if(currentEnemy >= EnemyList.Count)
+    {
+        currentEnemy = 0;
+    }
+}
 }

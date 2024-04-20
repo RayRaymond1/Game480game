@@ -26,7 +26,8 @@ public class CutsceneManager : MonoBehaviour
         playerView.gameObject.SetActive(false);
         TimelineAsset timeline = (TimelineAsset)director.playableAsset;
         director.SetGenericBinding(timeline.GetOutputTrack(0), brain);
-        canvas.SetActive(false);
+        if(canvas != null)
+            canvas.SetActive(false);
     }
 
     public void OnCutsceneEnd(){
@@ -34,7 +35,8 @@ public class CutsceneManager : MonoBehaviour
         playerView.gameObject.SetActive(true);
         Destroy(this.gameObject);
         EnableEnemies();
-        canvas.SetActive(true);
+        if(canvas != null)
+            canvas.SetActive(true);
     }
     public void EnableEnemies()
     {

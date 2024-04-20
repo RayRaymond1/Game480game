@@ -20,7 +20,15 @@ public class EventManager : MonoBehaviour
         levelComplete.AddListener(SwitchEvents);
     }
     void SwitchEvents(){
-        cutscenesToStart[nextCutscene].SetActive(true);
-        nextCutscene++;
+        // Check if nextCutscene is within the valid range
+        if(nextCutscene >= 0 && nextCutscene < cutscenesToStart.Count)
+        {
+            cutscenesToStart[nextCutscene].SetActive(true);
+            nextCutscene++;
+        }
+        else
+        {
+            Debug.Log("No more cutscenes to start.");
+        }
     }
 }
