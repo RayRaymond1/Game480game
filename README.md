@@ -1,11 +1,25 @@
 # The Way of Words - Development Documentation
 
-## How to play the current version (Draft 4)
+## How to play the current version (Draft 5)
 
 1. Open the game file in Unity
 2. Open the scenes folder
-3. Click on Dojo_Scene(final, needs enemies)
+3. Click on one of the scenes containing levels
+
+For Level 1: Click on Dojo_Scene(final, needs enemies)
+
+For Level 2: City_level
+
+For Level 3: Building_level0
+
 4. Click the play button
+
+How to complete the current build of Level 2:
+1. In order to attack the boss you must defeat the rest of the enemies first. They each take 1 or 2 words to defeat.
+2. Type the words that appear on the four drones, then type the word on the boss. Repeat this one more time to defeat the boss.
+
+Note: The layout/gameplay of Level 2 is not final
+
 
 ## [Design Document](https://docs.google.com/document/d/1RnADUqa4XkYSha4MJzp1s47EtEJZHQJguFQMNVEDugk/edit?usp=sharing)
 
@@ -39,9 +53,12 @@ Regarding the enemies, there has been a lot of work done. The entire code for th
 
 The script for Level 3’s opening cutscene has been reduced in length in order to more closely match the length of the previous cutscenes. It is still longer than we feel is necessary, so we may shorten it even more. We have also created a 50 second trailer for the game. It features gameplay and cutscene clips from the first level.
 
-
 ### 4-12-24
 
-To be added
+This week, we finalized the game’s script and the design document as a whole. We also chose what music would play during each level, cutscene, and menu. We added assets for level 3 such as rooms and objects in the level. We created a layout for all of the enemies for level 3 and moved the wire boss to level 3. We collected sound effects to implement into the game as it nears completion.
+
+We created and finished the in-game enemy for typeFACE. It is going to be a larger enemy with 4 drones around it. The player defeats typeFACE by attacking each of the drones which then allows you to hit the actual boss. Repeat this process two more times and then you have defeated the boss. There were also other minor things that we worked on, such as fixing some UI bugs, commenting code, and fixing some enemy AI bugs. In addition to this the user interface has been updated with regards to music options. This music will now be represented throughout each scene and will be changed with the slider in options.
+
+Cutscene 4 and the voices for every cutscene up until cutscene 4 were added. Some fixes were deployed to each cutscene to account for some voice lines length and some added assets as well. Progress on cutscene 5 and beyond is beginning now that we have the voice of the Rebel and the model for them.
 
 ### All game assets used as of now have been imported from other sources. None of them were made by us.
