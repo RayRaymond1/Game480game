@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1997771764}
-  m_IndirectSpecularColor: {r: 0.08558715, g: 0.18905303, b: 0.43228, a: 1}
+  m_IndirectSpecularColor: {r: 0.08534054, g: 0.18905962, b: 0.43237764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello
+  m_text: Hello welcome to way of words
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
   m_sharedMaterial: {fileID: 5912700232348595744, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
@@ -2784,8 +2784,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474536289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9998688, z: -0.016202698, w: 0}
-  m_LocalPosition: {x: -0.000000055500717, y: 1.637, z: -5.213}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.32934594, z: 13.474721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2824,7 +2824,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -2932,7 +2932,7 @@ RectTransform:
   m_LocalScale: {x: 0.5458298, y: 0.54583, z: 0.5458297}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6090112015361021605}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -6373,7 +6373,16 @@ MonoBehaviour:
   lines:
   - Hello, welcome to way of words
   - What is way of words anyway?
-  textSpeed: 0.5
+  - 'The game provides the player with three primary controls:'
+  - 'Typing: This is the primary form of attacking. The player uses their keyboard
+    to type the word displayed above the enemy they have selected. Upon successfully
+    typing the word, the player''s character attacks the enemy. '
+  - 'Target Switch: Pressing CTRL allows the player to switch their target to a different
+    enemy. Since the player can only attack one enemy at a time, this control enables
+    them to choose which enemy to focus their attacks on.'
+  - 'The camera operates on rails, directing the player''s movement and focus automatically. '
+  - Now try beating the sensei!!!
+  textSpeed: 5
 --- !u!114 &894965713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6584,7 +6593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 869, y: 315}
+  m_AnchoredPosition: {x: 769, y: 315}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032266229
@@ -6621,10 +6630,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Score:0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
+  m_sharedMaterial: {fileID: 5912700232348595744, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8870,15 +8879,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 3
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -9431,3 +9440,4 @@ SceneRoots:
   - {fileID: 1531813213}
   - {fileID: 541693236}
   - {fileID: 2015744710}
+  - {fileID: 485951731}
