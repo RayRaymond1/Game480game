@@ -118,6 +118,7 @@ public class EnemyAI : MonoBehaviour
 
     // Start the attack
     void AttackStart(){
+        enemyReferences.audioSource.PlayOneShot(enemyReferences.attackSound);
         enemyReferences.eventManagerEnemy.wordFailedEvent.Invoke();
         attacking = true;
     }

@@ -16,6 +16,8 @@ public class EnemyReferences : MonoBehaviour
     public EventManager eventManagerEnemy;
     public Typer typer;
     public EnemyAI enemyAI;
+    public AudioSource audioSource;
+    public AudioClip attackSound;
 
     // Header for the stats section in the inspector
     [Header("Stats")]
@@ -31,6 +33,7 @@ public class EnemyReferences : MonoBehaviour
         typer = GetComponent<Typer>();
         enemyAI = GetComponent<EnemyAI>();
         eventManagerEnemy = GetComponent<EventManager>();
+        audioSource = GetComponent<AudioSource>();
 
         // Add listeners for the events
         eventManagerEnemy.wordFailedEvent.AddListener(eventManagerObject.wordFailedEvent.Invoke);
