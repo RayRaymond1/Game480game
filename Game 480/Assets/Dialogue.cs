@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class Dialouge : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
 
     private int index;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        textComponent.text = string.Empty;
-        StartDialogue();
         
+        
+        StartDialouge();
+        textComponent.text = "Hello welcome to way of words, click here to Begin";
     }
 
     // Update is called once per frame
@@ -36,13 +38,14 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    void StartDialouge()
     {
         index = 0;
-        StartCoroutine(TypeLine());
+        StartCoroutine(Typeline());
+
     }
 
-    IEnumerator TypeLine()
+    IEnumerator Typeline()
     {
         foreach (char c in lines[index].ToCharArray())
         {
@@ -57,7 +60,7 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
-            StartCoroutine(TypeLine());
+            StartCoroutine(Typeline());
         }
         else
         {

@@ -6,6 +6,8 @@ public class EnemyAnimation : MonoBehaviour
 {
     public EventManager eventManager;
     private Animator animator;
+    public AudioSource audioSource;
+    public AudioClip attackSound;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -14,5 +16,6 @@ public class EnemyAnimation : MonoBehaviour
 
     void Attack(){
         animator.SetTrigger("Attack");
+        audioSource.PlayOneShot(attackSound);
     }
 }

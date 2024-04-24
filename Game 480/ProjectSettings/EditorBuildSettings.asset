@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/mainmenutitle.unity
     guid: baa9faabe16289f4790ca1df8af62134
-  - enabled: 0
-    path: Assets/Scenes/Dojo_Scene(final, needs enemies).unity
+  - enabled: 1
+    path: Assets/Scenes/Dojo_Scene.unity
     guid: 5b82c1aa87b3a4e49ae9cc04ad954b7e
   - enabled: 1
     path: Assets/Scenes/City_level.unity
     guid: 27d90305699f01e4ea89fd53715a3faf
+  - enabled: 1
+    path: Assets/Scenes/Bulding_level.unity
+    guid: 81f62b449105c7e479a99787bd5c053e
   m_configObjects: {}

@@ -393,7 +393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hello welcome to way of words
+  m_text: Hello welcome to way of words, click here to Begin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
   m_sharedMaterial: {fileID: 5912700232348595744, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
@@ -6371,18 +6371,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 230028993}
   lines:
-  - Hello, welcome to way of words
   - What is way of words anyway?
   - 'The game provides the player with three primary controls:'
-  - 'Typing: This is the primary form of attacking. The player uses their keyboard
-    to type the word displayed above the enemy they have selected. Upon successfully
-    typing the word, the player''s character attacks the enemy. '
+  - 'Typing: This is the primary form of attacking.'
   - 'Target Switch: Pressing CTRL allows the player to switch their target to a different
-    enemy. Since the player can only attack one enemy at a time, this control enables
-    them to choose which enemy to focus their attacks on.'
+    enemy.'
   - 'The camera operates on rails, directing the player''s movement and focus automatically. '
   - Now try beating the sensei!!!
-  textSpeed: 5
+  textSpeed: 0.01
 --- !u!114 &894965713
 MonoBehaviour:
   m_ObjectHideFlags: 0
