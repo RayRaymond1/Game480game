@@ -28,17 +28,15 @@ public class CutsceneManager : MonoBehaviour
         director.SetGenericBinding(timeline.GetOutputTrack(0), brain);
         if(canvas != null)
             canvas.SetActive(false);
-        eventManager.cutScene = true;
     }
 
     public void OnCutsceneEnd(){
-        eventManager.cutScene = false;
         playerView.gameObject.SetActive(true);
-        Destroy(this.gameObject);
         EnableEnemies();
         if(canvas != null)
             canvas.SetActive(true);
         eventManager.cutScene = false;
+        Destroy(this.gameObject);
     }
     public void EnableEnemies()
     {
@@ -46,15 +44,23 @@ public class CutsceneManager : MonoBehaviour
             return;
         }
         EnemiesToLoad.SetActive(true);
+        Debug.Log("Enemies Enabled");
     }
 
     public void onTransitionStart(){
+        eventManager.cutScene = true;
         TimelineAsset timeline = (TimelineAsset)director.playableAsset;
         
         director.SetGenericBinding(timeline.GetOutputTrack(0), playerView);
+        if(canvas != null)
+            canvas.SetActive(false);
     }
 
     public void onTransitionEnd(){
+        EnableEnemies();
+        if(canvas != null)
+            canvas.SetActive(true);
+        eventManager.cutScene = false;
         Destroy(this.gameObject);
     }
 }
