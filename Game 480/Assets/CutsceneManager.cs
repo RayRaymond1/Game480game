@@ -28,6 +28,7 @@ public class CutsceneManager : MonoBehaviour
         director.SetGenericBinding(timeline.GetOutputTrack(0), brain);
         if(canvas != null)
             canvas.SetActive(false);
+        eventManager.cutScene = true;
     }
 
     public void OnCutsceneEnd(){
@@ -37,6 +38,7 @@ public class CutsceneManager : MonoBehaviour
         EnableEnemies();
         if(canvas != null)
             canvas.SetActive(true);
+        eventManager.cutScene = false;
     }
     public void EnableEnemies()
     {

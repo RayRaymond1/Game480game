@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1997771764}
-  m_IndirectSpecularColor: {r: 0.08534054, g: 0.18905962, b: 0.43237764, a: 1}
+  m_IndirectSpecularColor: {r: 0.08558715, g: 0.18905303, b: 0.43228, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,24 +217,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 472416, guid: 923e2c857250b784eb3a49ce857086c2, type: 3}
   m_PrefabInstance: {fileID: 497946527}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &191929422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4474207691159315596, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
-  m_PrefabInstance: {fileID: 6090112015361021604}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &191929425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191929422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56a1bffa625b5674fa3fa47ff83d07b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventManager: {fileID: 1666338189}
 --- !u!1 &208877170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,8 +2766,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474536289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.32934594, z: 13.474721}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.0000002533197}
+  m_LocalPosition: {x: 0.025000095, y: 1.4235916, z: -10.9436865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9254,6 +9236,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3051250503962927241, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07256fd175c86434d816c80003fd8930, type: 3}
     - target: {fileID: 4474207691159315596, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9322,6 +9308,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8319231546961650255, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
+      propertyPath: eventManager
+      value: 
+      objectReference: {fileID: 1666338189}
     - target: {fileID: 8793405797122775194, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_Follow
       value: 
@@ -9339,7 +9329,7 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 334618183309978985, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects:
     - {fileID: 1617980474271699133, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
     m_AddedGameObjects:
@@ -9347,9 +9337,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1144966600}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4474207691159315596, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 191929425}
     - targetCorrespondingSourceObject: {fileID: 7809124504333366459, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       insertIndex: -1
       addedObject: {fileID: 662658366}
