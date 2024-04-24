@@ -25,7 +25,10 @@ public class EventManager : MonoBehaviour
         {
             cutscenesToStart[nextCutscene].SetActive(true);
             nextCutscene++;
-            Debug.Log("Cutscene " + nextCutscene + " started");
+            cutScene = true;
         }
+    }
+    void Update(){
+        
     }
 }

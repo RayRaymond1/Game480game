@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     public bool reseting = false;
     private bool newWord = false;
     public bool inRange = false;
-    public float speedScalar = 6f;
+    public float speedScalar = 7f;
     private bool attacking = false;
     
     // Initialize references and starting position

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CutsceneManager : MonoBehaviour
     public GameObject EnemiesToLoad = null;
     public EventManager eventManager;
     public GameObject canvas;
+    public string nextScene;
 
     void Start(){
         director = this.GetComponent<PlayableDirector>();
@@ -44,7 +46,6 @@ public class CutsceneManager : MonoBehaviour
             return;
         }
         EnemiesToLoad.SetActive(true);
-        Debug.Log("Enemies Enabled");
     }
 
     public void onTransitionStart(){
@@ -62,5 +63,9 @@ public class CutsceneManager : MonoBehaviour
             canvas.SetActive(true);
         eventManager.cutScene = false;
         Destroy(this.gameObject);
+    }
+    public void loadNextScene(){
+        if(nextScene != null)
+            SceneManager.LoadScene(nextScene);
     }
 }
