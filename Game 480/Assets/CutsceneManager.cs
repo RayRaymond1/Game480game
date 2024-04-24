@@ -45,4 +45,14 @@ public class CutsceneManager : MonoBehaviour
         }
         EnemiesToLoad.SetActive(true);
     }
+
+    public void onTransitionStart(){
+        TimelineAsset timeline = (TimelineAsset)director.playableAsset;
+        
+        director.SetGenericBinding(timeline.GetOutputTrack(0), playerView);
+    }
+
+    public void onTransitionEnd(){
+        Destroy(this.gameObject);
+    }
 }
