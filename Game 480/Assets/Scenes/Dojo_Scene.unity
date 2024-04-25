@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1997771764}
-  m_IndirectSpecularColor: {r: 0.08558715, g: 0.18905303, b: 0.43228, a: 1}
+  m_IndirectSpecularColor: {r: 0.08534054, g: 0.18905962, b: 0.43237764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2766,8 +2766,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474536289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.0000002533197}
-  m_LocalPosition: {x: 0.025000095, y: 1.4235916, z: -10.9436865}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.32934594, z: 13.474721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6364,7 +6364,7 @@ MonoBehaviour:
     them to choose which enemy to focus their attacks on.'
   - 'The camera operates on rails, directing the player''s movement and focus automatically. '
   - Now try beating the sensei!!!
-  textSpeed: 5
+  textSpeed: 0.01
 --- !u!114 &894965713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7187,6 +7187,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4368491947231596, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
   m_PrefabInstance: {fileID: 1243755988}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1254595933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1254595935}
+  - component: {fileID: 1254595934}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1254595934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254595933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acc4132769c29a4c8ca676b7fc4a465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudio: {fileID: 6090112015361021606}
+  soundEffectsAudio:
+  - {fileID: 1668363154373249852}
+--- !u!4 &1254595935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254595933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4886974, y: 2.0370803, z: -13.54204}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1265121190 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6291629876864880051, guid: 6da605b0a836a9848ae7389534ea124e, type: 3}
@@ -9199,6 +9246,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bdae95b2190f684b887fd315fbf1137, type: 3}
+--- !u!82 &1668363154373249852 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3640252747175939575, guid: 2bdae95b2190f684b887fd315fbf1137, type: 3}
+  m_PrefabInstance: {fileID: 1668363154373249851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2791947049537637599 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2791947049753337986, guid: 605971531cc5dfe4a93078b53f2389ce, type: 3}
@@ -9346,6 +9398,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6861501404186547673, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
   m_PrefabInstance: {fileID: 6090112015361021604}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &6090112015361021606 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3051250503962927241, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
+  m_PrefabInstance: {fileID: 6090112015361021604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6321181564805117330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9428,3 +9485,4 @@ SceneRoots:
   - {fileID: 541693236}
   - {fileID: 2015744710}
   - {fileID: 485951731}
+  - {fileID: 1254595935}
