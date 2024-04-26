@@ -4119,6 +4119,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4368491947231596, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
   m_PrefabInstance: {fileID: 774869304}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &820000965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 820000967}
+  - component: {fileID: 820000968}
+  m_Layer: 0
+  m_Name: sfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &820000967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820000965}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4886974, y: 2.0370803, z: -13.54204}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820000968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820000965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acc4132769c29a4c8ca676b7fc4a465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundAudio: {fileID: 6090112015361021606}
+  soundEffectsAudio:
+  - {fileID: 1668363154373249852}
 --- !u!1001 &826975340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6356,12 +6403,9 @@ MonoBehaviour:
   - Hello, welcome to way of words
   - What is way of words anyway?
   - 'The game provides the player with three primary controls:'
-  - 'Typing: This is the primary form of attacking. The player uses their keyboard
-    to type the word displayed above the enemy they have selected. Upon successfully
-    typing the word, the player''s character attacks the enemy. '
+  - 'Typing: This is the primary form of attacking.'
   - 'Target Switch: Pressing CTRL allows the player to switch their target to a different
-    enemy. Since the player can only attack one enemy at a time, this control enables
-    them to choose which enemy to focus their attacks on.'
+    enemy.'
   - 'The camera operates on rails, directing the player''s movement and focus automatically. '
   - Now try beating the sensei!!!
   textSpeed: 0.01
@@ -7187,53 +7231,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4368491947231596, guid: 52d340ed9c2714c4f8aabf1f82df1b58, type: 3}
   m_PrefabInstance: {fileID: 1243755988}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1254595933
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254595935}
-  - component: {fileID: 1254595934}
-  m_Layer: 0
-  m_Name: SFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1254595934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254595933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1acc4132769c29a4c8ca676b7fc4a465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundAudio: {fileID: 6090112015361021606}
-  soundEffectsAudio:
-  - {fileID: 1668363154373249852}
---- !u!4 &1254595935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254595933}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4886974, y: 2.0370803, z: -13.54204}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1265121190 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6291629876864880051, guid: 6da605b0a836a9848ae7389534ea124e, type: 3}
@@ -9485,4 +9482,4 @@ SceneRoots:
   - {fileID: 541693236}
   - {fileID: 2015744710}
   - {fileID: 485951731}
-  - {fileID: 1254595935}
+  - {fileID: 820000967}
