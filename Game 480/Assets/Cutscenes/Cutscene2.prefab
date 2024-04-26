@@ -10655,6 +10655,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -8408888952050970903, guid: 6d6a7fc31340a8243895e7310358e967, type: 2}
     value: {fileID: 5291340608831807987}
+  - key: {fileID: 4499388717973070415, guid: 6d6a7fc31340a8243895e7310358e967, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - a1afec3d5c2cb33439c2108a7ab296f2: {fileID: 0}
@@ -10741,6 +10743,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe17d6708249f73438e003fd8c85d1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemiesToLoad: {fileID: 0}
+  eventManager: {fileID: 0}
+  canvas: {fileID: 0}
+  nextScene: 
 --- !u!1 &9070485069843301834
 GameObject:
   m_ObjectHideFlags: 0
