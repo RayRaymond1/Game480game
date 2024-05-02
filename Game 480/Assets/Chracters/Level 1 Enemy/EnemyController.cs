@@ -20,9 +20,14 @@ public class EnemyController : MonoBehaviour
     // Vertical displacement for the controller
     public float vertDisplacement = 2.5f;
 
+    public Transform target;
+
     // Update is called once per frame
     void Update()
     {
+        // Look at the target
+        LookAtTarget();
+
         // If there is a boss
         if(Boss != null)
         {
@@ -69,24 +74,32 @@ public class EnemyController : MonoBehaviour
     // Remove an enemy from the list
     public void RemoveEnemy(object enemy)
     {
+        // Check if the enemy to be removed is before the current target in the list
+        if(EnemyList.IndexOf(enemy) < currentEnemy)
+        {
+            // If it is, decrement currentEnemy by 1 to account for the shift in indices
+            currentEnemy--;
+        }
+
+        // Remove the enemy from the list
         EnemyList.Remove(enemy);
         
-        // If the current enemy index is out of range, reset it to 0
+        // If the current enemy index is out of range, decrement it by 1
         if(currentEnemy >= EnemyList.Count)
         {
-            currentEnemy = 0;
+            currentEnemy--;
         }
     }
     
     // Get the current enemy
     public object GetCurrentEnemy()
     {
-        // If there are no enemies, return null
-        if(EnemyList.Count == 0)
+        // If there are no enemies or the current enemy index is out of range, return null
+        if(EnemyList.Count == 0 || currentEnemy < 0 || currentEnemy >= EnemyList.Count)
         {
             return null;
         }
-        
+
         // Return the current enemy
         return EnemyList[currentEnemy];
     }
@@ -129,7 +142,13 @@ private void NextEnemy()
     // If the current enemy index is out of range, reset it to 0
     if(currentEnemy >= EnemyList.Count)
     {
-        currentEnemy = 0;
+        currentEnemy--;
     }
 }
+void LookAtTarget(){
+        Vector3 lookPos = (target.position - transform.position);
+        lookPos.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 0.2f);
+    }
 }
