@@ -6765,6 +6765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sfx
       objectReference: {fileID: 0}
+    - target: {fileID: 514865559643003708, guid: ee0546cbb6dea5b44a413dc562b23aa5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 899159955051965224, guid: ee0546cbb6dea5b44a413dc562b23aa5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.4886974
@@ -6909,6 +6913,10 @@ PrefabInstance:
       propertyPath: soundEffectsAudio.Array.data[23]
       value: 
       objectReference: {fileID: 2063411898}
+    - target: {fileID: 4319026950279686937, guid: ee0546cbb6dea5b44a413dc562b23aa5, type: 3}
+      propertyPath: soundEffectsAudio.Array.data[24]
+      value: 
+      objectReference: {fileID: 464011466}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7081,6 +7089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3051250503962927241, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dafa9a715cf41d740baaeaf4f732e3c3, type: 3}
     - target: {fileID: 5649335834864180998, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
       propertyPath: m_Controller
       value: 
