@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1997771764}
-  m_IndirectSpecularColor: {r: 0.08534054, g: 0.18905962, b: 0.43237764, a: 1}
+  m_IndirectSpecularColor: {r: 0.08558715, g: 0.18905303, b: 0.43228, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6544,6 +6544,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6291629876864880051, guid: 6da605b0a836a9848ae7389534ea124e, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 6090112015361021607}
+    - target: {fileID: 6291629876864880051, guid: 6da605b0a836a9848ae7389534ea124e, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1666338189}
@@ -9553,6 +9557,11 @@ Transform:
 --- !u!82 &6090112015361021606 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3051250503962927241, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
+  m_PrefabInstance: {fileID: 6090112015361021604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6090112015361021607 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3194381353333279772, guid: 0e55ba5f49835b344a956446f5a9b348, type: 3}
   m_PrefabInstance: {fileID: 6090112015361021604}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6321181564805117330

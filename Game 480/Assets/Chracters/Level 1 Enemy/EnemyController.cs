@@ -20,9 +20,14 @@ public class EnemyController : MonoBehaviour
     // Vertical displacement for the controller
     public float vertDisplacement = 2.5f;
 
+    public Transform target;
+
     // Update is called once per frame
     void Update()
     {
+        // Look at the target
+        LookAtTarget();
+
         // If there is a boss
         if(Boss != null)
         {
@@ -69,24 +74,32 @@ public class EnemyController : MonoBehaviour
     // Remove an enemy from the list
     public void RemoveEnemy(object enemy)
     {
+        // Check if the enemy to be removed is before the current target in the list
+        if(EnemyList.IndexOf(enemy) < currentEnemy)
+        {
+            // If it is, decrement currentEnemy by 1 to account for the shift in indices
+            currentEnemy--;
+        }
+
+        // Remove the enemy from the list
         EnemyList.Remove(enemy);
         
-        // If the current enemy index is out of range, reset it to 0
+        // If the current enemy index is out of range, decrement it by 1
         if(currentEnemy >= EnemyList.Count)
         {
-            currentEnemy = 0;
+            currentEnemy--;
         }
     }
     
     // Get the current enemy
     public object GetCurrentEnemy()
     {
-        // If there are no enemies, return null
-        if(EnemyList.Count == 0)
+        // If there are no enemies or the current enemy index is out of range, return null
+        if(EnemyList.Count == 0 || currentEnemy < 0 || currentEnemy >= EnemyList.Count)
         {
             return null;
         }
-        
+
         // Return the current enemy
         return EnemyList[currentEnemy];
     }
@@ -114,22 +127,53 @@ public class EnemyController : MonoBehaviour
     }
     
     // Move to the next enemy
-private void NextEnemy()
-{
-    // Check if the list is empty
-    if(EnemyList.Count == 0)
+    private void NextEnemy()
     {
-        currentEnemy = 0;
-        return;
+        // Check if the list is empty
+        if(EnemyList.Count == 0)
+        {
+            currentEnemy = 0;
+            return;
+        }
+
+        // Loop until a non-defeated enemy is found or all enemies are checked
+        int checkedEnemies = 0;
+        do
+        {
+            // Increment the current enemy index
+            currentEnemy++;
+
+            // If the current enemy index is out of range, reset it to 0
+            if(currentEnemy >= EnemyList.Count)
+            {
+                currentEnemy = 0;
+            }
+
+            // Cast the current enemy to GameObject
+            GameObject currentEnemyObject = EnemyList[currentEnemy] as GameObject;
+
+            // If the current enemy is not null and its word is not complete, break the loop
+            if(currentEnemyObject != null && !currentEnemyObject.GetComponent<Typer>().isWordComplete)
+            {
+                break;
+            }
+
+            checkedEnemies++;
+        }
+        while(checkedEnemies < EnemyList.Count);
+
+        // If all enemies are defeated, reset currentEnemy to 0
+        if(checkedEnemies == EnemyList.Count)
+        {
+            currentEnemy = 0;
+        }
     }
-    
-    // Increment the current enemy index
-    currentEnemy++;
-    
-    // If the current enemy index is out of range, reset it to 0
-    if(currentEnemy >= EnemyList.Count)
-    {
-        currentEnemy = 0;
+
+    // Rotate the controller to look at the target
+    void LookAtTarget(){
+        Vector3 lookPos = (target.position - transform.position);
+        lookPos.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 0.2f);  
     }
-}
 }
