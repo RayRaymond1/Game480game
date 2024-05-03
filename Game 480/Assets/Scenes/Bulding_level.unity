@@ -36066,6 +36066,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6651856821937675148, guid: 11867a4e1d34ca84d8efa6194f0a89c9, type: 3}
+      propertyPath: nextScene
+      value: Dojo Scene (Final Cutscene)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651856821937675148, guid: 11867a4e1d34ca84d8efa6194f0a89c9, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1405963884}
