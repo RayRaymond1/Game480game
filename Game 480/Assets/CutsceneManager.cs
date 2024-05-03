@@ -17,13 +17,12 @@ public class CutsceneManager : MonoBehaviour
     public GameObject canvas;
     public string nextScene;
     
-    public AudioSource audioSource;
-
+    
     void Start(){
         director = this.GetComponent<PlayableDirector>();
         brain = GameObject.FindFirstObjectByType<CinemachineBrain>();
         playerView = GameObject.Find("PlayerView");
-        audioSource =  this.GetComponent<AudioSource>(); // Initialize the audio source
+       
         
     }
 
@@ -34,15 +33,7 @@ public class CutsceneManager : MonoBehaviour
         director.SetGenericBinding(timeline.GetOutputTrack(0), brain);
         if(canvas != null)
             canvas.SetActive(false);
-        foreach (var track in timeline.GetOutputTracks()) // Loop through all output tracks
-        {
-            if (track is AudioTrack) // If the track is an audio track
-            {
-                director.SetGenericBinding(track, audioSource); // Bind the audio source to the audio track
-                
-            }
-        }
-
+       
      
 
         }
@@ -68,14 +59,7 @@ public class CutsceneManager : MonoBehaviour
         TimelineAsset timeline = (TimelineAsset)director.playableAsset;
         
         director.SetGenericBinding(timeline.GetOutputTrack(0), playerView);
-        foreach (var track in timeline.GetOutputTracks()) // Loop through all output tracks
-        {
-            if (track is AudioTrack) // If the track is an audio track
-            {
-                director.SetGenericBinding(track, audioSource); // Bind the audio source to the audio track
-
-            }
-        }
+        
 
 
         if (canvas != null)

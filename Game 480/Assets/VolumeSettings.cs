@@ -21,10 +21,14 @@ public class VolumeSettings : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("backgroundSlider: " + backgroundSlider);
+        Debug.Log("soundEffectsSlider: " + soundEffectsSlider);
+        Debug.Log("backgroundAudio: " + backgroundAudio);
+        Debug.Log("soundEffectsAudio: " + soundEffectsAudio);
+
         firstPlayInt = PlayerPrefs.GetInt(FirstPlay);
         if (firstPlayInt == 0) {
-            backgroundFloat = 1.0f;
+            backgroundFloat = .25f;
             soundEffectsFloat = 0.75f;
             backgroundSlider.value = backgroundFloat;
             soundEffectsSlider.value = soundEffectsFloat;
@@ -34,7 +38,8 @@ public class VolumeSettings : MonoBehaviour
 
 
         }
-        else { backgroundFloat=PlayerPrefs.GetFloat(BackgroundPref);
+        else { 
+            backgroundFloat=PlayerPrefs.GetFloat(BackgroundPref);
             backgroundSlider.value = backgroundFloat;
             soundEffectsFloat=PlayerPrefs.GetFloat(SoundsEffectsPref);
             soundEffectsSlider.value=soundEffectsFloat;
