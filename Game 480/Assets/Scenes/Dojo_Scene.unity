@@ -2698,8 +2698,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474536289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.3293457, z: 13.474731}
+  m_LocalRotation: {x: 0, y: 0.9998688, z: -0.016202698, w: 0}
+  m_LocalPosition: {x: -0.000000055500717, y: 1.637, z: -5.213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2738,7 +2738,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60.000004
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -7962,6 +7962,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5054575046475886692, guid: 73e2a9cba0fb0a046bb9409783139f95, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1673351233}
     - target: {fileID: 5054575046475886692, guid: 73e2a9cba0fb0a046bb9409783139f95, type: 3}
       propertyPath: nextScene
       value: City_level
