@@ -10452,7 +10452,7 @@ PrefabInstance:
       objectReference: {fileID: 212615618}
     - target: {fileID: 7080608649485701702, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
       propertyPath: nextScene
-      value: Dojo Scene (Final Cutscene)
+      value: Bulding_level
       objectReference: {fileID: 0}
     - target: {fileID: 7080608649485701702, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
       propertyPath: eventManager
