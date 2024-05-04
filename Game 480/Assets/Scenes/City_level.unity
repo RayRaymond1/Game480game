@@ -2594,13 +2594,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1065750685007460006, guid: e61eaa2d2cc0f9f4786bb5c4b078353a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9008462960459371857, guid: e61eaa2d2cc0f9f4786bb5c4b078353a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e61eaa2d2cc0f9f4786bb5c4b078353a, type: 3}
 --- !u!1001 &612511759
 PrefabInstance:
@@ -5099,13 +5093,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1065750685007460006, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9008462960459371857, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
 --- !u!4 &1250013768 stripped
 Transform:
@@ -6472,13 +6460,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1065750685007460006, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9008462960459371857, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
 --- !u!4 &1272383187 stripped
 Transform:
@@ -7879,13 +7861,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1065750685007460006, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9008462960459371857, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
 --- !u!4 &1339706053 stripped
 Transform:
@@ -9556,13 +9532,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1065750685007460006, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 9008462960459371857, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a21b4c02741068c4e814731739dd3cd9, type: 3}
 --- !u!4 &1469074874 stripped
 Transform:
@@ -10388,6 +10358,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1357904953}
     m_Modifications:
+    - target: {fileID: 2909459819441407019, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 942866783179489301}
+    - target: {fileID: 2909459819441407019, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: loadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909459819441407019, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
+      propertyPath: m_Events.m_Events.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3788823121357120105, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
       propertyPath: m_SceneBindings.Array.data[28].value
       value: 
@@ -10465,6 +10447,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7080608649485701702, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
+      propertyPath: nextScene
+      value: Bulding_level
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080608649485701702, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1345531067}
@@ -10473,6 +10459,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
+--- !u!114 &942866783179489301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7080608649485701702, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
+  m_PrefabInstance: {fileID: 942866783179489300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486158828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe17d6708249f73438e003fd8c85d1e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1575755528444467086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5115244015872011007, guid: 48b87e5c8b2415c44b081e5376df6f6d, type: 3}
@@ -10550,6 +10547,10 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[28].value
       value: 
       objectReference: {fileID: 411851072}
+    - target: {fileID: 5261947893150657264, guid: f020ba24a0d5a8f48b02cba4219dd70b, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 686163363}
     - target: {fileID: 5261947893150657264, guid: f020ba24a0d5a8f48b02cba4219dd70b, type: 3}
       propertyPath: eventManager
       value: 
