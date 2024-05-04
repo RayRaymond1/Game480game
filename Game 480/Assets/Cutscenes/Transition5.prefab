@@ -219,6 +219,7 @@ MonoBehaviour:
   EnemiesToLoad: {fileID: 0}
   eventManager: {fileID: 0}
   canvas: {fileID: 0}
+  nextScene: 
 --- !u!1 &7730817266220646750
 GameObject:
   m_ObjectHideFlags: 0

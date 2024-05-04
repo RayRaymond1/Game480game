@@ -16,10 +16,10 @@ public class Dialouge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+
+        textComponent.text = string.Empty;
         StartDialouge();
-        textComponent.text = "Hello welcome to way of words, click here to Begin";
+        
     }
 
     // Update is called once per frame
