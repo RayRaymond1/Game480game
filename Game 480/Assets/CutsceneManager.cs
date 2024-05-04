@@ -22,7 +22,7 @@ public class CutsceneManager : MonoBehaviour
         director = this.GetComponent<PlayableDirector>();
         brain = GameObject.FindFirstObjectByType<CinemachineBrain>();
         playerView = GameObject.Find("PlayerView");
-       
+        
         
     }
 

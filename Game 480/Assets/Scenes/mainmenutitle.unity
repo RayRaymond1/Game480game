@@ -3110,7 +3110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SFX AND LEVEL MUSIC
+  m_text: SFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
   m_sharedMaterial: {fileID: 5912700232348595744, guid: c61710fc8d0f630418a16b5c4162e3bd, type: 2}
