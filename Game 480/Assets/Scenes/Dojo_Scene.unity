@@ -6460,10 +6460,11 @@ MonoBehaviour:
   - What is way of words anyway?
   - 'The game provides the player with three primary controls:'
   - 'Typing: This is the primary form of attacking.'
-  - 'Target Switch: Pressing CTRL allows the player to switch their target'
+  - 'Target Switch: Pressing SPACE allows the player to switch their target'
   - The camera operates on rails, directing the player's movement.
   - Now try beating the sensei!!!
   textSpeed: 0.01
+  enemyReferences: {fileID: 5369673033524283117}
 --- !u!114 &894965713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8889,7 +8890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015563653731322741, guid: e7c09d5cecbb1ac48bb2d7a63134ad2a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7015861216592084576, guid: e7c09d5cecbb1ac48bb2d7a63134ad2a, type: 3}
       propertyPath: m_IsActive
@@ -9323,6 +9324,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5430703592710368039, guid: 2bdae95b2190f684b887fd315fbf1137, type: 3}
   m_PrefabInstance: {fileID: 1668363154373249851}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5369673033524283117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5950328911067048974, guid: 2bdae95b2190f684b887fd315fbf1137, type: 3}
+  m_PrefabInstance: {fileID: 1668363154373249851}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9972d3588f2f2834a9d59a068248504e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5632367899500925535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5632367899756445186, guid: 605971531cc5dfe4a93078b53f2389ce, type: 3}

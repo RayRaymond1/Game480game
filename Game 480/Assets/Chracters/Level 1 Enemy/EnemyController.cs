@@ -70,24 +70,18 @@ public class EnemyController : MonoBehaviour
     {
         EnemyList.Add(enemy);
     }
-    
+
     // Remove an enemy from the list
     public void RemoveEnemy(object enemy)
     {
-        // Check if the enemy to be removed is before the current target in the list
-        if(EnemyList.IndexOf(enemy) < currentEnemy)
-        {
-            // If it is, decrement currentEnemy by 1 to account for the shift in indices
-            currentEnemy--;
-        }
-
         // Remove the enemy from the list
         EnemyList.Remove(enemy);
-        
-        // If the current enemy index is out of range, decrement it by 1
-        if(currentEnemy >= EnemyList.Count)
+        Debug.Log(currentEnemy + " " + EnemyList.Count);
+        Debug.Log(GetCurrentEnemy());
+
+        if(enemy == GetCurrentEnemy())
         {
-            currentEnemy--;
+            NextEnemy();
         }
     }
     

@@ -10,6 +10,7 @@ public class Dialouge : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    public EnemyReferences enemyReferences;
     
 
     // Start is called before the first frame update
@@ -35,6 +36,10 @@ public class Dialouge : MonoBehaviour
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
+        }
+        if(enemyReferences != null)
+        {
+            enemyReferences.agent.speed = 0;
         }
     }
 

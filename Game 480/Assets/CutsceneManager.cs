@@ -27,8 +27,10 @@ public class CutsceneManager : MonoBehaviour
     }
 
     public void onCutsceneStart(){
-        eventManager.cutScene = true;
-        playerView.gameObject.SetActive(false);
+        if(eventManager != null)
+            eventManager.cutScene = true;
+        if(playerView != null)
+            playerView.gameObject.SetActive(false);
         TimelineAsset timeline = (TimelineAsset)director.playableAsset;
         director.SetGenericBinding(timeline.GetOutputTrack(0), brain);
         if(canvas != null)
@@ -39,11 +41,14 @@ public class CutsceneManager : MonoBehaviour
         }
 
     public void OnCutsceneEnd(){
-        playerView.gameObject.SetActive(true);
+        if(playerView != null)
+            playerView.gameObject.SetActive(true);
         EnableEnemies();
         if(canvas != null)
             canvas.SetActive(true);
-        eventManager.cutScene = false;
+        if(eventManager != null)
+            eventManager.cutScene = false;
+        
         Destroy(this.gameObject);
     }
     public void EnableEnemies()
@@ -55,10 +60,11 @@ public class CutsceneManager : MonoBehaviour
     }
 
     public void onTransitionStart(){
-        eventManager.cutScene = true;
+        if(eventManager != null)
+            eventManager.cutScene = true;
         TimelineAsset timeline = (TimelineAsset)director.playableAsset;
-        
-        director.SetGenericBinding(timeline.GetOutputTrack(0), playerView);
+        if(playerView != null)
+            director.SetGenericBinding(timeline.GetOutputTrack(0), playerView);
         
 
 
@@ -70,7 +76,8 @@ public class CutsceneManager : MonoBehaviour
         EnableEnemies();
         if(canvas != null)
             canvas.SetActive(true);
-        eventManager.cutScene = false;
+        if(eventManager != null)
+            eventManager.cutScene = false;
         Destroy(this.gameObject);
     }
     public void loadNextScene(){
