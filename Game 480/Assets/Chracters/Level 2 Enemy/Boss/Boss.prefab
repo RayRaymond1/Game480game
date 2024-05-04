@@ -364,6 +364,7 @@ MonoBehaviour:
       m_Calls: []
   cutscenesToStart: []
   cutScene: 0
+  score: 0
 --- !u!114 &4625182724092769129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +386,8 @@ MonoBehaviour:
   eventManagerEnemy: {fileID: 0}
   typer: {fileID: 0}
   enemyAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  attackSound: {fileID: 0}
   pathUpdateDelay: 0.1
 --- !u!1 &562625895472862866
 GameObject:
@@ -528,6 +531,7 @@ MonoBehaviour:
       m_Calls: []
   cutscenesToStart: []
   cutScene: 0
+  score: 0
 --- !u!114 &3998011514081480800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +553,8 @@ MonoBehaviour:
   eventManagerEnemy: {fileID: 0}
   typer: {fileID: 0}
   enemyAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  attackSound: {fileID: 0}
   pathUpdateDelay: 0.1
 --- !u!1 &600431183410058783
 GameObject:
@@ -726,6 +732,7 @@ MonoBehaviour:
       m_Calls: []
   cutscenesToStart: []
   cutScene: 0
+  score: 0
 --- !u!95 &1282440122198792169
 Animator:
   serializedVersion: 5
@@ -1047,6 +1054,7 @@ MonoBehaviour:
       m_Calls: []
   cutscenesToStart: []
   cutScene: 0
+  score: 0
 --- !u!114 &8129054292505994999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1076,8 @@ MonoBehaviour:
   eventManagerEnemy: {fileID: 0}
   typer: {fileID: 0}
   enemyAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  attackSound: {fileID: 0}
   pathUpdateDelay: 0.1
 --- !u!1 &936503961938688500
 GameObject:
@@ -2272,15 +2282,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2772110159130183738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.3800018}
-  m_LocalScale: {x: 0.64, y: 5.14, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.3788}
+  m_LocalScale: {x: 0.5280064, y: 4.3410897, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1671719088968929271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 25.59}
+  m_AnchoredPosition: {x: 0.0051991, y: 43.3}
   m_SizeDelta: {x: 12.33, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8031159758705007091
@@ -3074,15 +3084,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3832873533833237759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.3800018}
-  m_LocalScale: {x: 0.64, y: 5.14, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.3788}
+  m_LocalScale: {x: 0.5280064, y: 4.3410897, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1671719088968929271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 13.71}
+  m_AnchoredPosition: {x: 0.0051991, y: 33.2}
   m_SizeDelta: {x: 12.33, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8152410390790867833
@@ -4788,6 +4798,8 @@ MonoBehaviour:
   eventManagerEnemy: {fileID: 0}
   typer: {fileID: 0}
   enemyAI: {fileID: 0}
+  audioSource: {fileID: 0}
+  attackSound: {fileID: 0}
   pathUpdateDelay: 0.1
 --- !u!114 &3600057909787675377
 MonoBehaviour:
@@ -4824,6 +4836,7 @@ MonoBehaviour:
       m_Calls: []
   cutscenesToStart: []
   cutScene: 0
+  score: 0
 --- !u!1 &6865881640847526439
 GameObject:
   m_ObjectHideFlags: 0
