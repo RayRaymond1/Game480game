@@ -10550,7 +10550,7 @@ PrefabInstance:
     - target: {fileID: 5261947893150657264, guid: f020ba24a0d5a8f48b02cba4219dd70b, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 686163363}
+      objectReference: {fileID: 212615618}
     - target: {fileID: 5261947893150657264, guid: f020ba24a0d5a8f48b02cba4219dd70b, type: 3}
       propertyPath: eventManager
       value: 
