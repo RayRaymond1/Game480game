@@ -720,7 +720,6 @@ GameObject:
   - component: {fileID: 712609472}
   - component: {fileID: 712609471}
   - component: {fileID: 712609470}
-  - component: {fileID: 712609473}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -811,22 +810,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &712609473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712609468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00776516fdf7bf4ab1b73c3b16b7ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundSlider: {fileID: 0}
-  soundEffectsSlider: {fileID: 0}
-  backgroundAudio: {fileID: 0}
-  soundEffectsAudio: []
 --- !u!1 &839878704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,7 +1770,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2147345090}
-  - component: {fileID: 2147345089}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -1795,22 +1777,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2147345089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147345088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00776516fdf7bf4ab1b73c3b16b7ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundSlider: {fileID: 0}
-  soundEffectsSlider: {fileID: 0}
-  backgroundAudio: {fileID: 0}
-  soundEffectsAudio: []
 --- !u!4 &2147345090
 Transform:
   m_ObjectHideFlags: 0
