@@ -242,3 +242,4 @@ MonoBehaviour:
   EnemiesToLoad: {fileID: 0}
   eventManager: {fileID: 0}
   canvas: {fileID: 0}
+  nextScene: 
