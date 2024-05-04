@@ -1016,7 +1016,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   healthBar: {fileID: 1424766561}
-  damage: 20
+  damage: 10
   eventManagerObject: {fileID: 1345531067}
 --- !u!1001 &482183130
 PrefabInstance:

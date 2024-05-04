@@ -10251,7 +10251,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   healthBar: {fileID: 38375885}
-  damage: 20
+  damage: 10
   eventManagerObject: {fileID: 1405963884}
 --- !u!1 &533481309 stripped
 GameObject:
